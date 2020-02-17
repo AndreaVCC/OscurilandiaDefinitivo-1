@@ -29,22 +29,12 @@ public class Tablero {
 
 	// Metodo crea tablero 15x15 ---------------------//
 
-	public void creaTablero() {
-
-		// Rellenar tablero completo con signo + ---------//
-
-		for (int x=0; x < tablero.length; x++) {
-			for (int y=0; y < tablero[x].length; y++) {
-				tablero[x][y] ="+";
-			}
-		}
-	}
 
 		// Crear arraylist con todos los coches
 	public void agregarCarro() {
+		Scanner scanner = new Scanner(System.in);
 
 		for (int i = 0; i < 18; i++) {
-			Scanner scanner = new Scanner(System.in);
 			System.out.println("Ingrese informacion comun de los coches: ");
 			System.out.println("Cantidad de ocupantes:");
 			int cantidadOcupantes = scanner.nextInt();
@@ -88,8 +78,8 @@ public class Tablero {
 				listaCarros.add(0, trupalla);
 				numCoche = numCoche + 1;
 			}
-			scanner.close();
 		}
+		scanner.close();
 
 		/* Muestra el listado de todos los coches agregados al arraylist, Prueba
 		for (Carro cars : listaCarros) {
@@ -98,6 +88,16 @@ public class Tablero {
 		*/
 	}
 
+	public void creaTablero() {
+		
+		// Rellenar tablero completo con signo + ---------//
+		
+		for (int x=0; x < tablero.length; x++) {
+			for (int y=0; y < tablero[x].length; y++) {
+				tablero[x][y] ="+";
+			}
+		}
+	}
 	public void posicionaKromis() {
 		// Posicionar dentro de la tablero los carros... Kromis
 		for (int i = 0 ; i<3; i++) {

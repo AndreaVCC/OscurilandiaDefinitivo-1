@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Menu {
 
+	/* COMENTANDO MIENTRAS 
 	static List<Kromi>ListaKromis = new ArrayList <Kromi>();
 	static List<Caguano>ListaCaguanos = new ArrayList <Caguano>();
 	static List<Trupalla>ListaTrupallas = new ArrayList <Trupalla>();
@@ -28,6 +29,9 @@ public class Menu {
 			est.imprimir();
 		}
 	}
+	
+	
+	 
 	private static void agregar() {
 		System.out.println();
 		int op1 = scanner.nextInt(); //se lee la opcion ingresada
@@ -113,11 +117,16 @@ public class Menu {
 			op3 = scanner.nextInt(); //se lee la opcion ingresada
 		}
 	}
+	
+	*/
 	private static void salir() {
 		System.out.print("Hasta luego");
 	}
+	
 	public static void main(String[] args) {
 		//Menu del programa y lector de variables.
+		Tablero tablero = new Tablero();
+
 		Scanner scanner = new Scanner (System.in);
 		System.out.println("¿Qué desea hacer? \n 1) Atributos vehículos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
 		System.out.print("Elija su opcion: ");
@@ -125,13 +134,18 @@ public class Menu {
 		while (opcion != 5) {
 			switch (opcion) {
 			case 1:
-				agregar();
+				tablero.agregarCarro();
 				break;
 			case 2:
-				//generar();
+				tablero.creaTablero();
+				tablero.posicionaKromis();
+				tablero.posicionarCanguanos();
+				tablero.posicionarTrupallas();
+				tablero.muestraTablero();
 				break;
 			case 3:
-				//mostrar();
+				tablero.creaTablero();
+				tablero.muestraTablero();
 				break;
 			case 4:
 				//calcular()

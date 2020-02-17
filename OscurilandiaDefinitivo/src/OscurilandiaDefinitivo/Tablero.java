@@ -40,28 +40,62 @@ public class Tablero {
 		}
 	}
 
-	//crera carros
-	public void agregarCarro () {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Ingrese Datos del primer kromi");
-		System.out.println("Ingrese cantidad de ocupantes:");
-		int cantidadOcupantes = scanner.nextInt();
-		System.out.println("Ingrese fecha ingreso:");
-		String fechaIngreso = scanner.next();
-		int ubicacionX = 0;
-		int ubicacionY = 0;
-		int numCoche = 0;
-		System.out.println("Ingrese año fabricación:");
-		int anioFabricacion = scanner.nextInt();
-		System.out.println("Ingrese marca:");
-		String marca = scanner.next();
-		Kromi kromi1 = new Kromi(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche, anioFabricacion, marca);
+		// Crear arraylist con todos los coches
+	public void agregarCarro() {
 
-		//Agregando al arraylist "listaCarros"
-		listaCarros.add(0, kromi1);
+		for (int i = 0; i < 18; i++) {
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Ingrese informacion comun de los coches: ");
+			System.out.println("Cantidad de ocupantes:");
+			int cantidadOcupantes = scanner.nextInt();
+			System.out.println("Fecha ingreso:");
+			String fechaIngreso = scanner.next();
+			int ubicacionX = 0;
+			int ubicacionY = 0;
+			int numCoche = i;
 
-		System.out.println(kromi1);
+			if (i <= 2) {
+				System.out.println("Ingrese informacion de coches tipo Kromi");
+				System.out.println("Anio fabricacion:");
+				int anioFabricacion = scanner.nextInt();
+				System.out.println("Marca:");
+				String marca = scanner.next();
+				Kromi kromi = new Kromi(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
+						anioFabricacion, marca);
+				listaCarros.add(0, kromi);
+				numCoche = numCoche + 1;
+				System.out.println("Kromi " + numCoche + " agregado con exito");
 
+			} else if (i > 2 && i <= 7) {
+				System.out.println("Agregando tipo Caguano");
+				System.out.println("Alcance de tiro:");
+				int alcanceTiro = scanner.nextInt();
+				System.out.println("Color confeti:");
+				String colorConfeti = scanner.nextLine();
+				Caguano caguano = new Caguano(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
+						alcanceTiro, colorConfeti);
+				listaCarros.add(0, caguano);
+				numCoche = numCoche + 1;
+
+			} else {
+				System.out.println("Agregando tipo Trupalla");
+				System.out.println("Nivel de armadura:");
+				int nivelArmadura = scanner.nextInt();
+				System.out.println("Nombre conductor:");
+				String nombreConductor = scanner.nextLine();
+				Trupalla trupalla = new Trupalla(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
+						nivelArmadura, nombreConductor);
+				listaCarros.add(0, trupalla);
+				numCoche = numCoche + 1;
+			}
+			scanner.close();
+		}
+
+		/* Muestra el listado de todos los coches agregados al arraylist, Prueba
+		for (Carro cars : listaCarros) {
+			System.out.println(cars);
+		}
+		*/
 	}
 
 	public void posicionaKromis() {
@@ -185,7 +219,7 @@ public class Tablero {
 					}
 				}
 			}
-			//				System.out.println("Â¿Desea continuar Y / N ?");
+			//				System.out.println("Ã‚Â¿Desea continuar Y / N ?");
 			//				String cont = continuar.next();
 			//				if (cont.equalsIgnoreCase("N")){
 			//					seguir = false;

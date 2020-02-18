@@ -44,7 +44,6 @@ public class Tablero {
 	}
 	
 	// Metodo crea tablero 15x15 ---------------------//
-<<<<<<< HEAD
 	public void creaTablero() {
 		
 	// Rellenar tablero completo con signo + ---------//
@@ -58,9 +57,6 @@ public class Tablero {
 	
 	
 	// Crear arraylist con todos los coches
-=======
-
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 	public void agregarCarro() {
 		Scanner teclado = new Scanner(System.in);
 		creaTablero();
@@ -95,12 +91,8 @@ public class Tablero {
 			
 				Kromi kromi = new Kromi(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						anioFabricacion, marca);
-<<<<<<< HEAD
 				
 				listaCarros.add(i, kromi);
-=======
-				listaCarros.add(0, kromi);
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 				System.out.println("Kromi " + numCoche + " agregado con exito");
 				
 //				System.out.println("Imprimir Kromi");
@@ -113,7 +105,6 @@ public class Tablero {
 				System.out.println("Alcance de tiro:");
 				int alcanceTiro = teclado.nextInt();
 				System.out.println("Color confeti:");
-<<<<<<< HEAD
 				String colorConfeti = teclado.next();
 				posicionarCanguanos();
 				// Asignamos a los atributos la posicion x,y en el tablero.
@@ -123,28 +114,19 @@ public class Tablero {
 //				System.out.println("asignacion ub y: " + ubicacionY);
 				numCoche = numCoche + 1;			
 				
-=======
-				String colorConfeti = scanner.next();
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 				Caguano caguano = new Caguano(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						alcanceTiro, colorConfeti);
-<<<<<<< HEAD
 				
 				listaCarros.add(i, caguano);
 				//caguano.imprimir();
 				
 				
 	
-=======
-				listaCarros.add(1, caguano);
-
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 			} else {
 				System.out.println("Agregando tipo Trupalla");
 				System.out.println("Nivel de armadura:");
 				int nivelArmadura = teclado.nextInt();
 				System.out.println("Nombre conductor:");
-<<<<<<< HEAD
 				String nombreConductor = teclado.nextLine();
 				posicionarTrupallas();
 				// Asignamos a los atributos la posicion x,y en el tablero.
@@ -155,37 +137,15 @@ public class Tablero {
 				numCoche = numCoche + 1;
 				
 				
-=======
-				String nombreConductor = scanner.next();
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 				Trupalla trupalla = new Trupalla(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						nivelArmadura, nombreConductor);
-<<<<<<< HEAD
 				listaCarros.add(i, trupalla);
 				//trupalla.imprimir();
-=======
-				listaCarros.add(2, trupalla);
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 			}
 			
 		}
-<<<<<<< HEAD
 		teclado.close();
-=======
-		scanner.close();
-
-		// Muestra el listado de todos los coches agregados al arraylist, Prueba
-		for (Carro cars : listaCarros) {
-			System.out.println(cars);
-		}
-		
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 	}
-<<<<<<< HEAD
-=======
-	
-	public void creaTablero() {
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 		
 		
 	// Posicionar dentro de la tablero los carros... Kromis
@@ -358,7 +318,6 @@ public class Tablero {
 						}
 					}
 				}
-<<<<<<< HEAD
 					System.out.println("¿Desea continuar Y / N ?");
 					String cont = opc.next();
 					if (cont.equalsIgnoreCase("N")){
@@ -374,24 +333,4 @@ public class Tablero {
 			}while (seguir == true);
 		
 }
-=======
-			}
-			//				System.out.println("Â¿Desea continuar Y / N ?");
-			//				String cont = continuar.next();
-			//				if (cont.equalsIgnoreCase("N")){
-			//					seguir = false;
-			//					System.out.println("Puntaje actual: " + puntaje);
-			//					break;
-			//				}
-			//				else {
-			//muestraTablero();
-			//				}
-		}while (seguir = true);
-
-		lanzahuevo.close();
-		continuar.close();
-
-	}
-
->>>>>>> branch 'master' of https://github.com/Jose-Paulo/OscurilandiaDefinitivo.git
 }

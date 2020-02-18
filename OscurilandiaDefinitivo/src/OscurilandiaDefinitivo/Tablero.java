@@ -29,8 +29,6 @@ public class Tablero {
 
 	// Metodo crea tablero 15x15 ---------------------//
 
-
-		// Crear arraylist con todos los coches
 	public void agregarCarro() {
 		Scanner scanner = new Scanner(System.in);
 
@@ -53,7 +51,6 @@ public class Tablero {
 				Kromi kromi = new Kromi(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						anioFabricacion, marca);
 				listaCarros.add(0, kromi);
-				numCoche = numCoche + 1;
 				System.out.println("Kromi " + numCoche + " agregado con exito");
 
 			} else if (i > 2 && i <= 7) {
@@ -61,33 +58,31 @@ public class Tablero {
 				System.out.println("Alcance de tiro:");
 				int alcanceTiro = scanner.nextInt();
 				System.out.println("Color confeti:");
-				String colorConfeti = scanner.nextLine();
+				String colorConfeti = scanner.next();
 				Caguano caguano = new Caguano(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						alcanceTiro, colorConfeti);
-				listaCarros.add(0, caguano);
-				numCoche = numCoche + 1;
+				listaCarros.add(1, caguano);
 
 			} else {
 				System.out.println("Agregando tipo Trupalla");
 				System.out.println("Nivel de armadura:");
 				int nivelArmadura = scanner.nextInt();
 				System.out.println("Nombre conductor:");
-				String nombreConductor = scanner.nextLine();
+				String nombreConductor = scanner.next();
 				Trupalla trupalla = new Trupalla(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						nivelArmadura, nombreConductor);
-				listaCarros.add(0, trupalla);
-				numCoche = numCoche + 1;
+				listaCarros.add(2, trupalla);
 			}
 		}
 		scanner.close();
 
-		/* Muestra el listado de todos los coches agregados al arraylist, Prueba
+		// Muestra el listado de todos los coches agregados al arraylist, Prueba
 		for (Carro cars : listaCarros) {
 			System.out.println(cars);
 		}
-		*/
+		
 	}
-
+	
 	public void creaTablero() {
 		
 		// Rellenar tablero completo con signo + ---------//
@@ -227,7 +222,7 @@ public class Tablero {
 			//					break;
 			//				}
 			//				else {
-			muestraTablero();
+			//muestraTablero();
 			//				}
 		}while (seguir = true);
 

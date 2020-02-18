@@ -53,7 +53,7 @@ public class Menu {
 				System.out.println("Ingrese una opcion valida");
 				break;
 			}
-			System.out.println("¿Qué desea hacer? \n 1) Atributos vehículos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
+			System.out.println("ï¿½Quï¿½ desea hacer? \n 1) Atributos vehï¿½culos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
 			System.out.print("Elija su opcion: ");
 			op1 = scanner.nextInt(); //se lee la opcion ingresada
 		}
@@ -63,11 +63,11 @@ public class Menu {
 		String ocupantesKromi = scanner.next(); //se lee la opcion ingresada
 		System.out.println("Fecha de Ingreso: ");
 		String ingresoKromi = scanner.next(); //se lee la opcion ingresada
-		System.out.println("Institución: ");
+		System.out.println("Instituciï¿½n: ");
 		String institucionKromi = scanner.next(); //se lee la opcion ingresada
 		System.out.println("Ubicacion Tablero: ");
 		String tableroKromi = scanner.next(); //se lee la opcion ingresada
-		System.out.println("Año Fabricación: ");
+		System.out.println("Aï¿½o Fabricaciï¿½n: ");
 		String fabricacionKromi = scanner.next(); //se lee la opcion ingresada
 		System.out.println("Marca: ");
 		String marcaKromi = scanner.next(); //se lee la opcion ingresada
@@ -79,7 +79,7 @@ public class Menu {
 		String ocupantesCaguano = scanner.next(); //se lee la opcion ingresada
 		System.out.println("Fecha de Ingreso: ");
 		String ingresoCaguano = scanner.next(); //se lee la opcion ingresada
-		System.out.println("Institución: ");
+		System.out.println("Instituciï¿½n: ");
 		String institucionCaguano = scanner.next(); //se lee la opcion ingresada
 		System.out.println("Ubicacion Tablero: ");
 		String tableroCaguano = scanner.next(); //se lee la opcion ingresada
@@ -91,7 +91,7 @@ public class Menu {
 		ListaCaguanos.add(caguano1);//se guarda objeto en lista Caguanos
 	}
 	private static void mostrar() {
-		System.out.println("¿Qué desea hacer? \n 1) Mostrar Kromis \n 2) Mostrar Caguanos\n 3) Mostrar Trupallas \n 4) Volver");
+		System.out.println("ï¿½Quï¿½ desea hacer? \n 1) Mostrar Kromis \n 2) Mostrar Caguanos\n 3) Mostrar Trupallas \n 4) Volver");
 		System.out.print("Elija su opcion: ");
 		int op3 = scanner.nextInt(); //se lee la opcion ingresada
 		while (op3 != 4) {
@@ -112,7 +112,7 @@ public class Menu {
 				System.out.println("Ingrese una opcion valida");
 				break;
 			}
-			System.out.println("¿Qué desea hacer? \n 1) Atributos vehículos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
+			System.out.println("ï¿½Quï¿½ desea hacer? \n 1) Atributos vehï¿½culos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
 			System.out.print("Elija su opcion: ");
 			op3 = scanner.nextInt(); //se lee la opcion ingresada
 		}
@@ -126,26 +126,29 @@ public class Menu {
 	public static void main(String[] args) {
 		//Menu del programa y lector de variables.
 		Tablero tablero = new Tablero();
-
+		tablero.creaTablero();
 		Scanner scanner = new Scanner (System.in);
-		System.out.println("¿Qué desea hacer? \n 1) Atributos vehículos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
+		System.out.println("Que desea hacer? \n 1) Ingresa datos vehiculos\n 2) Generar Carros \n 3) Mostrar Matriz y lanzar huevos \n 4) Muestra Puntajes \n 5) Salir");
 		System.out.print("Elija su opcion: ");
 		int opcion = scanner.nextInt(); //se lee la opcion ingresada
 		while (opcion != 5) {
 			switch (opcion) {
 			case 1:
 				tablero.agregarCarro();
+				//tablero.creaTablero();
 				break;
 			case 2:
-				tablero.creaTablero();
 				tablero.posicionaKromis();
 				tablero.posicionarCanguanos();
 				tablero.posicionarTrupallas();
-				tablero.muestraTablero();
+				System.out.println(" ");
+				System.out.println("Coches posicionados en Tablero");
+				System.out.println("" );
 				break;
 			case 3:
 				tablero.creaTablero();
 				tablero.muestraTablero();
+				tablero.lanzarHuevo();
 				break;
 			case 4:
 				//calcular()
@@ -154,17 +157,17 @@ public class Menu {
 				salir();
 				break;				
 			default:
-				System.out.println("\n --Ingrese una opcion válida-- \n");
+				System.out.println("\n --Ingrese una opcion vï¿½lida-- \n");
 				break;
 			}
-			System.out.println("¿Qué desea hacer? \n 1) Atributos vehículos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
+			System.out.println("ï¿½Quï¿½ desea hacer? \n 1) Atributos vehï¿½culos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
 			System.out.print("Elija su opcion: ");
 			opcion = scanner.nextInt(); //se lee la opcion ingresada			
 		}
 		scanner.close();
 	}
 	/*public static void main(String[] args) {
-		System.out.println("¿Qué desea hacer? \n 1) Atributos vehículos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
+		System.out.println("ï¿½Quï¿½ desea hacer? \n 1) Atributos vehï¿½culos \n 2) Generar Carros \n 3) Mostrar Matriz \n 4) Calcular Puntajes \n 5) Salir");
 		Scanner opcion = new Scanner();
 		while (opcion != 5) {
 			switch(opcion) {

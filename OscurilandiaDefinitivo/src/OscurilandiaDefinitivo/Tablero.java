@@ -11,32 +11,30 @@ import java.util.*;
 
 public class Tablero {
 
-	//private static final String String = null;
 
 	// Atributos
 	String tablero[][] = new String[15][15];
 	
 	public  ArrayList <Huevo> listaHuevos = new ArrayList <>(); 
 	public ArrayList <Carro> listaCarros = new ArrayList <>();
+	public int[] id = new int[29];
 	Carro carros = new Carro();
+	
+	Scanner teclado = new Scanner(System.in);
 	
 	int puntaje=0;
 	
+	
 	// Contructor
 	
-	
-
-//	public Tablero(String[][] tablero) {
-//			this.tablero = tablero;
-//	}
-		
-	public Tablero(String[][] tablero, ArrayList<Huevo> listaHuevos, ArrayList<Carro> listaCarros, Carro carros,
+		public Tablero(String[][] tablero, ArrayList<Huevo> listaHuevos, ArrayList<Carro> listaCarros, Carro carros,
 			int puntaje) {
 		this.tablero = tablero;
 		this.listaHuevos = listaHuevos;
 		this.listaCarros = listaCarros;
 		this.carros = carros;
 		this.puntaje = puntaje;
+
 	}
 
 	public Tablero () {
@@ -57,8 +55,8 @@ public class Tablero {
 	
 	
 	// Crear arraylist con todos los coches
-	public void agregarCarro() {
-		Scanner teclado = new Scanner(System.in);
+		public void agregarCarro() {
+		//Scanner teclado = new Scanner(System.in);
 		creaTablero();
 	
 		
@@ -72,7 +70,8 @@ public class Tablero {
 			int numCoche = i;
 			int ubicacionX = 0;
 			int ubicacionY = 0;
-		
+			
+			
 	
 			if (i <= 2) {
 				System.out.println("Ingrese informacion de coches tipo Kromi");
@@ -88,6 +87,7 @@ public class Tablero {
 //				System.out.println("asignacion ub x: " + ubicacionX);
 //				System.out.println("asignacion ub y: " + ubicacionY);
 				numCoche = numCoche + 1;
+				
 			
 				Kromi kromi = new Kromi(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						anioFabricacion, marca);
@@ -144,7 +144,7 @@ public class Tablero {
 			}
 			
 		}
-		teclado.close();
+		
 	}
 		
 		
@@ -162,6 +162,7 @@ public class Tablero {
 				tablero[x][y] = "K";
 				tablero[x+1][y] = "K";
 				tablero[x+2][y] = "K";
+				
 				pos = true;
 		
 				// Asignamos posiciones a los atributos de objeto carro
@@ -244,28 +245,30 @@ public class Tablero {
 	}
 
 	// Metodo lanza huevos a coches
+
 	public void lanzarHuevo () {
 		System.out.println("Binvenido a Oscurilandia");
 	
 				
 		boolean seguir = false;
 		do {
-			Scanner opc = new Scanner(System.in);
+			
 		
 			System.out.print("Ingrese Fila entre 0 y 14: ");
-			int fil = opc.nextInt();
+			int fil = teclado.nextInt();
 			System.out.print("Ingrese Columna entre 0 y 14:");
-			int col = opc.nextInt();
+			int col = teclado.nextInt();
 			
 			// validamos que el lanzamiento este dentro del tablero
 			if (fil > 14 || col > 14) {
 				System.out.println("coordenadas fuera del recuadro... vuelva a intentarlo");
+				seguir = true;
 			
 			}
 			else {
 			
 				if (tablero[fil][col].equals("T") || tablero[fil][col].equals("C") || tablero[fil][col].equals("K")){
-					System.out.println(tablero[fil][col].equals("T"));
+		
 
 					if (tablero[fil][col].equals("T")){
 						puntaje = puntaje + 1;
@@ -317,20 +320,33 @@ public class Tablero {
 							tablero[fil][col] = "H";
 						}
 					}
-				}
+					muestraTablero();
+					System.out.println("Puntaje actual: " + puntaje);
+				
 					System.out.println("¿Desea continuar Y / N ?");
-					String cont = opc.next();
-					if (cont.equalsIgnoreCase("N")){
+					String cont = teclado.next();
+					if (cont.equalsIgnoreCase("N")){	
 						seguir = false;
 						System.out.println("Puntaje actual: " + puntaje);
-						//break;
+					
+					}
+					else {
+						seguir = true;
+					}
+					
 			
 		
-			muestraTablero();
-					}
+				}
 		
-					opc.close();
+				
 			}while (seguir == true);
 		
+			
+		}
+		
+
 }
-}
+
+
+		
+

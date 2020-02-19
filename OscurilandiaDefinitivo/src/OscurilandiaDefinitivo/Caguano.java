@@ -12,6 +12,16 @@ public class Caguano extends Carro{
 	private String colorConfeti;
 
 	// Constructores
+	/**
+     	* Constructor con 5 parametros
+     	* @param cantidadOcupantes numero de ocupantes del carro
+     	* @param fechaIngreso fecha ingreso del carro
+     	* @param ubicacionX ubicacion de fila del carro
+     	* @param ubicacionY ubicacion de columna del carro
+     	* @param numCoche numero de carro ingresado
+     	* @param alcanceTiro alcance del tiro del carro.
+     	* @param colorConfeti color del confeti del carro.
+     	*/
 	public Caguano(int cantidadOcupantes, String fechaIngreso, int ubicacionX, int ubicacionY, int numCoche,
 			int alcanceTiro, String colorConfeti) {
 		super(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche);
@@ -19,8 +29,10 @@ public class Caguano extends Carro{
 		this.colorConfeti = colorConfeti;
 	}
 
+	/**
+     	* Constructor por defecto.
+     	*/
 	public Caguano() {
-
 	}
 
 	// Getters & Setters
@@ -47,7 +59,7 @@ public class Caguano extends Carro{
 		return super.toString() + "Caguano [alcanceTiro=" + alcanceTiro + ", colorConfeti=" + colorConfeti + "]";
 	}
 
-	//Método imprimir
+	//MÃ©todo imprimir
 	public void imprimir() {
 		super.imprimir();
 		System.out.println("Alcance tiro: " + getAlcanceTiro() + "\n Color del Confeti: " + getColorConfeti());

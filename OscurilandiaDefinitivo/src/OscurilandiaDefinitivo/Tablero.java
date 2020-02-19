@@ -14,18 +14,18 @@ public class Tablero {
 
 
 	// Atributos
-	String tablero[][] = new String[15][15];
-	String tablero2 [][] = new String[15][15];
+	static String tablero[][] = new String[15][15];
+	static String tablero2 [][] = new String[15][15];
 	
-	public  ArrayList <Huevo> listaHuevos = new ArrayList <>(); 
-	public ArrayList <Carro> listaCarros = new ArrayList <>();
+	public static  ArrayList <Huevo> listaHuevos = new ArrayList <>(); 
+	public static ArrayList <Carro> listaCarros = new ArrayList <>();
 	public int[] id = new int[29];
-	Carro carros = new Carro();
+	static Carro carros = new Carro();
 
 	
-	Scanner teclado = new Scanner(System.in);
+	static Scanner teclado = new Scanner(System.in);
 	
-	int puntaje=0;
+	static int puntaje=0;
 
 	
 	
@@ -37,7 +37,7 @@ public class Tablero {
 			
 	}
 	
-
+/*
 	
 	public Tablero(String[][] tablero, String[][] tablero2, ArrayList<Huevo> listaHuevos, ArrayList<Carro> listaCarros,
 			int[] id, Carro carros, Scanner teclado, int puntaje) {
@@ -52,10 +52,10 @@ public class Tablero {
 		this.puntaje = puntaje;
 	}
 
-
+*/
 
 	// Metodo crea tablero 15x15 ---------------------//
-	public void creaTablero() {
+	public static void creaTablero() {
 		
 	// Rellenar tablero completo con signo + ---------//
 			
@@ -69,7 +69,7 @@ public class Tablero {
 	
 	
 	// Crear arraylist con todos los coches
-		public void agregarCarro() {
+		public static void agregarCarro() {
 		//Scanner teclado = new Scanner(System.in);
 		creaTablero();
 	
@@ -158,7 +158,7 @@ public class Tablero {
 		
 		
 	// Posicionar dentro de la tablero los carros... Kromis
-	public void posicionaKromis() {
+	public static void posicionaKromis() {
 		//String posxy = " ";
 		boolean pos = false;
 		do {
@@ -187,7 +187,7 @@ public class Tablero {
 		
 	}
 	
-	public void posicionarCanguanos() {
+	public static void posicionarCanguanos() {
 	// Posicionar dentro de la tablero los carros... Canguanos
 		boolean pos = false;
 		do {
@@ -215,7 +215,7 @@ public class Tablero {
 	
 	}
 	
-	public void posicionarTrupallas() {
+	public static void posicionarTrupallas() {
 	// Posicionar dentro de la tablero los carros... Trupallas
 		boolean pos = false;
 		do {
@@ -244,7 +244,7 @@ public class Tablero {
 	
 
 	
-	public void muestraTablero() {
+	public static void muestraTablero() {
 	// Mostramos Tablero con Coches
 	System.out.println("Tablero Oficial");
 	System.out.println(" ");
@@ -267,7 +267,7 @@ public class Tablero {
 
 	// Metodo lanza huevos a coches
 
-	public void lanzarHuevo () {
+	public static void lanzarHuevo () {
 		System.out.println("Binvenido a Oscurilandia");
 		Huevo huevo = new Huevo();
 		puntaje = 0;
@@ -327,10 +327,10 @@ public class Tablero {
 										if (recorre.getUbicacionY() == col && tablero[fil][col+1].equals("X")) {
 											System.out.println("Encontro posicion exacta Caguano 1");
 											System.out.println("7 puntos EXTRA Caguano");
-											this.puntaje = this.puntaje + 7;
+											puntaje = puntaje + 7;
 										} else  if (col - recorre.getUbicacionY() == 1 && tablero[fil][col-1].equals("X")) {
 										       System.out.println("7 puntos EXTRA Caguano 2");
-										       this.puntaje = this.puntaje + 7;
+										       puntaje = puntaje + 7;
 										}			
 										         
 									}
@@ -354,15 +354,15 @@ public class Tablero {
 										if (recorre.getUbicacionY() == col) {
 											if (recorre.getUbicacionX() == fil && tablero[fil+1][col].equals("X") && tablero[fil+2][col].equals("X")){														
 												System.out.println("10 puntos EXTRA Kromi");
-												this.puntaje = this.puntaje + 10;
+												puntaje = puntaje + 10;
 														
 											}else if (fil - recorre.getUbicacionX() == 1 && tablero[fil-1][col].equals("X") && tablero[fil+1][col].equals("X")){
 								       			System.out.println("10 puntos EXTRA Kromi");
-										        this.puntaje = this.puntaje + 10;
+										        puntaje = puntaje + 10;
 										     
 											}else if (fil - recorre.getUbicacionX() == 2 && tablero[fil-1][col].equals("X") && tablero[fil-2][col].equals("X")){
 										      	System.out.println("10 puntos EXTRA Kromi");
-										        this.puntaje = this.puntaje + 10;
+										        puntaje = puntaje + 10;
 											}										   
 										}
 									}
@@ -383,7 +383,7 @@ public class Tablero {
 						}
 					}
 					muestraTablero();
-					System.out.println("Puntaje actual: " + this.puntaje);
+					System.out.println("Puntaje actual: " + puntaje);
 				
 					System.out.println("¿Desea continuar Y / N ?");
 					String cont = teclado.next();

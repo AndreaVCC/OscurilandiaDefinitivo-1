@@ -2,7 +2,7 @@
 
 Descripción
 
-## Version
+## Versión
 
 1.0
 

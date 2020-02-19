@@ -5,6 +5,11 @@
 
 package OscurilandiaDefinitivo;
 
+/**
+ * Clase padre	que definira atributos comunes de todos los tipos de carro.
+ * @author DPJA
+ * @version 1.0
+ */
 public class Carro {
 
 	// Atributos
@@ -16,6 +21,14 @@ public class Carro {
 
 
 	// Constructores
+    	/**
+     	* Constructor con 5 parametros
+     	* @param cantidadOcupantes numero de ocupantes del carro
+     	* @param fechaIngreso fecha ingreso del carro
+     	* @param ubicacionX ubicacion de fila del carro
+     	* @param ubicacionY ubicacion de columna del carro
+     	* @param numCoche numero de carro ingresado
+     	*/
 	public Carro(int cantidadOcupantes, String fechaIngreso, int ubicacionX, int ubicacionY, int numCoche) {
 		super();
 		this.cantidadOcupantes = cantidadOcupantes;
@@ -76,7 +89,7 @@ public class Carro {
 				+ ubicacionX + ", ubicacionY=" + ubicacionY + ", numCoche=" + numCoche + "]";
 	}
 
-	//M�todo imprimir
+	//Metodo imprimir
 	public void imprimir() {
 		System.out.println("Cantidad Ocupantes: " + getCantidadOcupantes() + "\n Fecha de Ingreso: " + getFechaIngreso() + "\n ubicaci�n Tablero: " + ubicacionX + "," + ubicacionY + "\n Numero de Coche: " + numCoche);	
 	}

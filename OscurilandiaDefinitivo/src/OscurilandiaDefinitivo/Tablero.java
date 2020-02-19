@@ -9,53 +9,50 @@ package OscurilandiaDefinitivo;
 
 import java.util.ArrayList;
 
+
 import java.util.*;
 
-/**
- * clase que representa el terreno en el que se ubica cada carro y en el cual se  sitúan los proyectiles.
- * @author DPJA
- * @version 1.0
- */
 public class Tablero {
 
 
 	// Atributos
-	static String tablero[][] = new String[15][15];
+	String tablero[][] = new String[15][15];
+	String tablero2 [][] = new String[15][15];
 	
 	public  ArrayList <Huevo> listaHuevos = new ArrayList <>(); 
-	public static ArrayList <Carro> listaCarros = new ArrayList <>();
+	public ArrayList <Carro> listaCarros = new ArrayList <>();
 	public int[] id = new int[29];
-	static Carro carros = new Carro();
+	Carro carros = new Carro();
+
 	
-	static Scanner teclado = new Scanner(System.in);
+	Scanner teclado = new Scanner(System.in);
 	
-	static int puntaje=0;
+	int puntaje=0;
+
 	
 	
 	// Contructor
 	
 		public Tablero(String[][] tablero, ArrayList<Huevo> listaHuevos, ArrayList<Carro> listaCarros, Carro carros,
 			int puntaje) {
-		Tablero.tablero = tablero;
+		this.tablero = tablero;
 		this.listaHuevos = listaHuevos;
-		Tablero.listaCarros = listaCarros;
-		Tablero.carros = carros;
-		Tablero.puntaje = puntaje;
+		this.listaCarros = listaCarros;
+		this.carros = carros;
+		this.puntaje = puntaje;
+	
+		
 
 	}
-	
-	/**
-     	* Constructor por defecto.
-     	*/
+
 	public Tablero () {
 			
 	}
 	
+
+	
 	// Metodo crea tablero 15x15 ---------------------//
-	/**
-	 * Metodo que crea un tablero de 15 columnas y 15 filas.
-	 */
-	public static void creaTablero() {
+	public void creaTablero() {
 		
 	// Rellenar tablero completo con signo + ---------//
 			
@@ -68,15 +65,12 @@ public class Tablero {
 	
 	
 	// Crear arraylist con todos los coches
-		/**
-	 	* Metodo que agrega 18 carros. 3 tipo Kromi, 5 tipo Caguano y 10 tipo Trupalla.
-	 	*/
-		public static void agregarCarro() {
+		public void agregarCarro() {
 		//Scanner teclado = new Scanner(System.in);
 		creaTablero();
 	
 		
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 4; i++) {
 			System.out.println("Ingrese informacion comun de los coches: ");
 			System.out.println("Cantidad de ocupantes:");
 			int cantidadOcupantes = teclado.nextInt();
@@ -91,7 +85,7 @@ public class Tablero {
 	
 			if (i <= 2) {
 				System.out.println("Ingrese informacion de coches tipo Kromi");
-				System.out.println("Año fabricacion:");
+				System.out.println("Anio fabricacion:");
 				int anioFabricacion = teclado.nextInt();
 				System.out.println("Marca:");
 				String marca = teclado.next();
@@ -165,10 +159,7 @@ public class Tablero {
 		
 		
 	// Posicionar dentro de la tablero los carros... Kromis
-	/**
-	 * Metodo que posiciona de manera aleatoria los carros de tipo Kromi.
-	 */
-	public static void posicionaKromis() {
+	public void posicionaKromis() {
 		//String posxy = " ";
 		boolean pos = false;
 		do {
@@ -197,10 +188,7 @@ public class Tablero {
 		
 	}
 	
-	/**
-	 * Metodo que posiciona de manera aleatoria los carros de tipo Caguanos.
-	 */
-	public static void posicionarCanguanos() {
+	public void posicionarCanguanos() {
 	// Posicionar dentro de la tablero los carros... Canguanos
 		boolean pos = false;
 		do {
@@ -228,10 +216,7 @@ public class Tablero {
 	
 	}
 	
-	/**
-	 * Metodo que posiciona de manera aleatoria los carros de tipo Trupallas.
-	 */
-	public static void posicionarTrupallas() {
+	public void posicionarTrupallas() {
 	// Posicionar dentro de la tablero los carros... Trupallas
 		boolean pos = false;
 		do {
@@ -258,34 +243,27 @@ public class Tablero {
 		
 	}
 	
-	// Mostrar tablero
-	
-	/**
-	 * Metodo que muestra el tablero generado.
-	 */
-	public static void muestraTablero() {
+	// Mostrar tablero 
+	public void muestraTablero() {
 		System.out.println(" ");
 		for (int x=0; x < tablero.length; x++) {
 			for (int y=0; y < tablero[x].length; y++) {
 				System.out.print(tablero[x][y]+" ");
 			}
-			 System.out.println();					 
+			 System.out.println();
 		}
-		Menu.menu();
 	}
 
 	// Metodo lanza huevos a coches
 
-	/**
-	 * Metodo que lanza huevos y genera puntos segun el coche.
-	 */
-	public static void lanzarHuevo () {
-		System.out.println("**Bienvenido a Oscurilandia**");
-	
+	public void lanzarHuevo () {
+		System.out.println("Binvenido a Oscurilandia");
+		Huevo huevo = new Huevo();
+		puntaje = 0;
 				
 		boolean seguir = false;
 		do {
-			
+			System.out.println("Puntaje actual: " + puntaje);
 		
 			System.out.print("Ingrese Fila entre 0 y 14: ");
 			int fil = teclado.nextInt();
@@ -301,83 +279,175 @@ public class Tablero {
 			else {
 			
 				if (tablero[fil][col].equals("T") || tablero[fil][col].equals("C") || tablero[fil][col].equals("K")){
-		
+	
 
 					if (tablero[fil][col].equals("T")){
 						puntaje = puntaje + 1;
 						System.out.println("Trupalla inutilizado");
 						System.out.println("Puntaje actual: " + puntaje);
 						tablero[fil][col] = "X";
+						huevo.setFilaCaida(fil);
+						huevo.setColumnaCaida(col);
+						huevo.setPuntaje(puntaje);
+						listaHuevos.add(huevo);
+						for (Huevo huevoslanzados: listaHuevos) {
+							System.out.println(huevoslanzados);
+						}
+						
+		
 						
 					}
 						else {
-							if  (tablero[fil][col] == "C") {
-								puntaje = puntaje + 2 ;
-								System.out.println("Caguano inutilizado");
+							if  (tablero[fil][col].equals("C")) {
+								puntaje = puntaje + 2;
 								System.out.println("Puntaje actual: " + puntaje);
+								huevo.setFilaCaida(fil);
+								huevo.setColumnaCaida(col);
+								huevo.setPuntaje(puntaje);
+								listaHuevos.add(huevo);
+								for (Huevo huevoslanzados: listaHuevos) {
+									System.out.println(huevoslanzados);
+								}
 								
-								for (int i=0;i<listaCarros.size();i++) {
+								
 									System.out.println(fil);
 									System.out.println(col);
-									if (listaCarros.get(i).getUbicacionX() == fil && listaCarros.get(i).getUbicacionY() == col) {
-										System.out.println("ubicacion encontrada");
-										tablero[fil][col] = "X";
+									System.out.println("ubicacion encontrada");
+									tablero[fil][col] = "X";						
+									carros.getUbicacionX();
+									carros.getUbicacionY();
+									for (Carro recorre:listaCarros) {
 										
+										if (recorre.getClass().toString().contentEquals("class pruebasdeexamen.Caguano")) {
+					
+											if (recorre.getUbicacionX() == fil) {
+						
+												if (recorre.getUbicacionY() == col) {
+													if (tablero[fil][col+1]== "X"){
+														System.out.println("Encontro posicion exacta Caguano");
+														System.out.println("10 puntos EXTRA");
+													
+														this.puntaje = this.puntaje + 7;
+														
+													}
+													
+												}
+											} else {
+										         if (col - recorre.getUbicacionY() == 1) {
+										        	 System.out.println("encontro posicion 1");
+										        		if (tablero[fil][col-1]== "X") {
+															
+										        			System.out.println("10 puntos EXTRA Caguano");
+										        			this.puntaje = this.puntaje + 7;
+													
+												
+										        		}
+										         }
+										   
+												
+											}
+								
+										}	
 									}
-									else {
-										System.out.println("No es igual");
-									}
-										
 									
-								}
-								carros.getUbicacionX();
-								carros.getUbicacionY();
 								
 							}
 							else {
 								if (tablero[fil][col].equals("K")) {
 									puntaje =  puntaje + 3;
-									System.out.println("Kromi inutilizado");
+								
 									System.out.println("Puntaje actual: " + puntaje);
 									tablero[fil][col] = "X";
+									huevo.setFilaCaida(fil);
+									huevo.setColumnaCaida(col);
+									huevo.setPuntaje(puntaje);
+									listaHuevos.add(huevo);
+										
+									
+									for (Carro recorre:listaCarros) {
+							
+										if (recorre.getClass().toString().contentEquals("class pruebasdeexamen.Kromi")) {
+					
+											if (recorre.getUbicacionY() == col) {
+						
+												if (recorre.getUbicacionX() == fil) {
+													if (tablero[fil+1][col].equals("X") && tablero[fil+2][col].equals("X") ){
+														System.out.println("Encontro posicion exacta Kromi");
+														System.out.println("10 puntos EXTRA Kromi");
+													
+														this.puntaje = this.puntaje + 10;
+														
+													}
+													
+												}
+											} else {
+										         if (fil - recorre.getUbicacionX() == 1) {
+										        	 System.out.println("encontro posicion 1");
+										        		if (tablero[fil-1][col].equals("X") && tablero[fil+1][col].equals("X") ) {
+															
+										        			System.out.println("10 puntos EXTRA Kromi");
+										        			this.puntaje = this.puntaje + 10;
+													
+												
+										        		}
+										         }
+										         else {
+										        	 if (fil - recorre.getUbicacionX() == 2) {
+										        		 System.out.println("encontro posicion 2");
+										        		 if (tablero[fil-1][col].equals("X") && tablero[fil-2][col].equals("X") ) {
+										        	
+										        			 System.out.println("10 puntos EXTRA Kromi");
+										        			this.puntaje = this.puntaje + 10;
+										   
+										        			 
+										        
+										        		 }
+										        	 }
+														
+										        		 
+										        }
+												
+											}
+								
+										}	
+									}
 								}
 							}
+
 						}
-
-
-					}
+				}
+					
 					else {
 						if (tablero[fil][col].equals("X"))
-							System.out.println("Puntaje actual: " + puntaje);
+							System.out.println("");
 						else {
 							tablero[fil][col] = "H";
 						}
 					}
-					Tablero.muestraTablero();
-					System.out.println("Puntaje actual: " + puntaje);
+					muestraTablero();
+					System.out.println("Puntaje actual: " + this.puntaje);
 				
 					System.out.println("¿Desea continuar Y / N ?");
 					String cont = teclado.next();
 					if (cont.equalsIgnoreCase("N")){	
 						seguir = false;
-						System.out.println("Puntaje actual: " + puntaje);
+					
 					
 					}
 					else {
 						seguir = true;
 					}
 					
-			
-		
 				}
 		
+			
+			
 				
 			}while (seguir == true);
 		
 			
 		}
 		
-
 }
 
 

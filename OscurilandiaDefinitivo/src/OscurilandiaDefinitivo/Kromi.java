@@ -5,6 +5,11 @@
 
 package OscurilandiaDefinitivo;
 
+/**
+ * Clase hija de Carro, define las caracteristicas especificas de carro tipo Caguano.
+ * @author DPJA
+ * @version 1.0
+ */
 public class Kromi extends Carro{
 
 	// Atributos
@@ -12,11 +17,27 @@ public class Kromi extends Carro{
 	private String marca;
 
 	//Constructor
+	/**
+     	* Constructor con 5 parametros
+     	* @param cantidadOcupantes numero de ocupantes del carro
+     	* @param fechaIngreso fecha ingreso del carro
+     	* @param ubicacionX ubicacion de fila del carro
+     	* @param ubicacionY ubicacion de columna del carro
+     	* @param numCoche numero de carro ingresado
+     	* @param anioFabricacion a√±o fabricacion del carro
+     	* @param marca marca del carro
+     	*/
 	public Kromi(int cantidadOcupantes, String fechaIngreso, int ubicacionX, int ubicacionY, int numCoche,
 			int anioFabricacion, String marca) {
 		super(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche);
 		this.anioFabricacion = anioFabricacion;
 		this.marca = marca;
+	}
+	
+	/**
+     	* Constructor por defecto.
+     	*/
+	public Kromi() {
 	}
 
 	// Getters & Setters
@@ -43,10 +64,10 @@ public class Kromi extends Carro{
 		return super.toString() + "Kromi [anioFabricacion=" + anioFabricacion + ", marca=" + marca + "]";
 	}
 
-	//MÈtodo imprimir
+	//M√©todo imprimir
 	public void imprimir() {
 		super.imprimir();
-		System.out.println("AÒo FabricaciÛn: " + getAnioFabricacion() + "\n Marca: " + getMarca());
+		System.out.println("A√±o Fabricaci√≥n: " + getAnioFabricacion() + "\n Marca: " + getMarca());
 	}
 
 }

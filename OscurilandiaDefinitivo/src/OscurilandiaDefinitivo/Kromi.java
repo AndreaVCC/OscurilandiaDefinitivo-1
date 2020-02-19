@@ -35,8 +35,8 @@ public class Kromi extends Carro{
 	}
 	
 	/**
-     	* Constructor por defecto.
-     	*/
+    * Constructor por defecto.
+    */
 	public Kromi() {
 	}
 

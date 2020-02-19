@@ -23,7 +23,7 @@ public class Menu {
 			System.out.println("*************************");
 			System.out.println("* Oscurilandia the game *");
 			System.out.println("*************************");
-			System.out.println("¿Que desea hacer? \n 1) Agregar vehiculos \n 2) Mostrar carros \n 3) Jugar \n 4) Mostrar puntuacion \n 5) Salir");
+			System.out.println("ï¿½Que desea hacer? \n 1) Agregar vehiculos \n 2) Mostrar carros \n 3) Jugar \n 4) Mostrar puntuacion \n 5) Salir");
 			System.out.println("");
 			System.out.print("Ingrese Opcion: ");
 			opcion = scanner.nextInt();
@@ -58,7 +58,7 @@ public class Menu {
 					salir = false;
 					break;
 			}		
-			}while (opcion < 4);
+			}while (opcion < 5);
 
 	}
 

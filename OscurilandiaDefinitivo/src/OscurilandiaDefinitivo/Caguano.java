@@ -57,6 +57,7 @@ public class Caguano extends Carro{
 	@Override
 	public String toString() {
 		return super.toString() + "Caguano [alcanceTiro=" + alcanceTiro + ", colorConfeti=" + colorConfeti + "]";
+	
 	}
 
 

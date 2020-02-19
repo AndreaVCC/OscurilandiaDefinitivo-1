@@ -87,6 +87,7 @@ public class Carro {
 	public String toString() {
 		return "Carro [cantidadOcupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", ubicacionX="
 				+ ubicacionX + ", ubicacionY=" + ubicacionY + ", numCoche=" + numCoche + "]";
+	
 	}
 
 

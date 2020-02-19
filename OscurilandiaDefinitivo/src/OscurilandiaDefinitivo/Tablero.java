@@ -8,9 +8,7 @@
 package OscurilandiaDefinitivo;
 
 import java.util.ArrayList;
-
-
-import java.util.*;
+import java.util.Scanner;
 
 public class Tablero {
 
@@ -33,17 +31,7 @@ public class Tablero {
 	
 	// Contructor
 	
-		public Tablero(String[][] tablero, ArrayList<Huevo> listaHuevos, ArrayList<Carro> listaCarros, Carro carros,
-			int puntaje) {
-		this.tablero = tablero;
-		this.listaHuevos = listaHuevos;
-		this.listaCarros = listaCarros;
-		this.carros = carros;
-		this.puntaje = puntaje;
-	
-		
 
-	}
 
 	public Tablero () {
 			
@@ -51,6 +39,21 @@ public class Tablero {
 	
 
 	
+	public Tablero(String[][] tablero, String[][] tablero2, ArrayList<Huevo> listaHuevos, ArrayList<Carro> listaCarros,
+			int[] id, Carro carros, Scanner teclado, int puntaje) {
+		super();
+		this.tablero = tablero;
+		this.tablero2 = tablero2;
+		this.listaHuevos = listaHuevos;
+		this.listaCarros = listaCarros;
+		this.id = id;
+		this.carros = carros;
+		this.teclado = teclado;
+		this.puntaje = puntaje;
+	}
+
+
+
 	// Metodo crea tablero 15x15 ---------------------//
 	public void creaTablero() {
 		
@@ -59,6 +62,7 @@ public class Tablero {
 		for (int x=0; x < tablero.length; x++) {
 			for (int y=0; y < tablero[x].length; y++) {
 			tablero[x][y] ="+";
+			tablero2[x][y] ="+";
 			}
 		}
 	}
@@ -94,8 +98,7 @@ public class Tablero {
 				// Asignamos a los atributos la posicion x e y en el tablero.
 				ubicacionX = carros.getUbicacionX();
 				ubicacionY = carros.getUbicacionY();
-//				System.out.println("asignacion ub x: " + ubicacionX);
-//				System.out.println("asignacion ub y: " + ubicacionY);
+
 				numCoche = numCoche + 1;
 				
 			
@@ -104,11 +107,7 @@ public class Tablero {
 				
 				listaCarros.add(i, kromi);
 				System.out.println("Kromi " + numCoche + " agregado con exito");
-				
-//				System.out.println("Imprimir Kromi");
-//				//kromi.imprimir();
-//				System.out.print("Lsita Carros: " + "\n" + listaCarros);
-//				
+								
 				
 			} else if (i > 2 && i <= 7) {
 				System.out.println("Agregando tipo Caguano");
@@ -117,18 +116,18 @@ public class Tablero {
 				System.out.println("Color confeti:");
 				String colorConfeti = teclado.next();
 				posicionarCanguanos();
+				
 				// Asignamos a los atributos la posicion x,y en el tablero.
 				ubicacionX = carros.getUbicacionX();
 				ubicacionY = carros.getUbicacionY();
-//				System.out.println("asignacion ub x: " + ubicacionX);
-//				System.out.println("asignacion ub y: " + ubicacionY);
+
 				numCoche = numCoche + 1;			
 				
 				Caguano caguano = new Caguano(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						alcanceTiro, colorConfeti);
 				
 				listaCarros.add(i, caguano);
-				//caguano.imprimir();
+	
 				
 				
 	
@@ -243,15 +242,27 @@ public class Tablero {
 		
 	}
 	
-	// Mostrar tablero 
+
+	
 	public void muestraTablero() {
-		System.out.println(" ");
-		for (int x=0; x < tablero.length; x++) {
-			for (int y=0; y < tablero[x].length; y++) {
-				System.out.print(tablero[x][y]+" ");
-			}
-			 System.out.println();
+	// Mostramos Tablero con Coches
+	System.out.println("Tablero Oficial");
+	System.out.println(" ");
+	for (int x=0; x < tablero.length; x++) {
+		for (int y=0; y < tablero[x].length; y++) {
+			System.out.print(tablero[x][y]+" ");
 		}
+		 System.out.println();
+	}
+
+	// Mostramos Tablero SIN Coches
+	System.out.println(" ");
+	for (int x=0; x < tablero2.length; x++) {
+		for (int y=0; y < tablero2[x].length; y++) {
+			System.out.print(tablero2[x][y]+" ");
+		}
+		 System.out.println();
+	}
 	}
 
 	// Metodo lanza huevos a coches
@@ -279,13 +290,12 @@ public class Tablero {
 			else {
 			
 				if (tablero[fil][col].equals("T") || tablero[fil][col].equals("C") || tablero[fil][col].equals("K")){
-	
-
 					if (tablero[fil][col].equals("T")){
 						puntaje = puntaje + 1;
 						System.out.println("Trupalla inutilizado");
 						System.out.println("Puntaje actual: " + puntaje);
 						tablero[fil][col] = "X";
+						tablero2[fil][col] = "X";
 						huevo.setFilaCaida(fil);
 						huevo.setColumnaCaida(col);
 						huevo.setPuntaje(puntaje);
@@ -308,7 +318,8 @@ public class Tablero {
 								
 								System.out.println(fil);
 								System.out.println(col);
-								tablero[fil][col] = "X";						
+								tablero[fil][col] = "X";
+								tablero2[fil][col] = "X";
 								carros.getUbicacionX();
 								carros.getUbicacionY();
 								for (Carro recorre:listaCarros) {	
@@ -332,6 +343,7 @@ public class Tablero {
 								
 									System.out.println("Puntaje actual: " + puntaje);
 									tablero[fil][col] = "X";
+									tablero2[fil][col] = "X";
 									huevo.setFilaCaida(fil);
 									huevo.setColumnaCaida(col);
 									huevo.setPuntaje(puntaje);
@@ -367,6 +379,7 @@ public class Tablero {
 							System.out.println("");
 						else {
 							tablero[fil][col] = "H";
+							tablero2[fil][col] = "H";
 						}
 					}
 					muestraTablero();
@@ -393,7 +406,6 @@ public class Tablero {
 			
 		}
 		
-
 		
 }
 

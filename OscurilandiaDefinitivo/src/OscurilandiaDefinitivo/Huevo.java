@@ -5,6 +5,11 @@
 
 package OscurilandiaDefinitivo;
 
+/**
+ * Clase que define cada lanzamiento realizado dentro del tablero.	
+ * @author DPJA
+ * @version 1.0
+ */
 public class Huevo {
 
 	// Atrubutos
@@ -13,15 +18,22 @@ public class Huevo {
 	private int puntaje;
 
 	// Constructores
+	/**
+     	* Constructor con 3 parametros
+    	* @param filaCaida fila donde se hubica el huevo lanzado
+     	* @param columnaCaida columna donde se hubica el huevo lanzado
+     	* @param puntaje puntaje acumulado del juego
+     	*/
 	public Huevo(int filaCaida, int columnaCaida, int puntaje) {
-
 		this.filaCaida = filaCaida;
 		this.columnaCaida = columnaCaida;
 		this.puntaje = puntaje;
 	}
-
+	
+	/**
+     	* Constructor por defecto
+     	*/
 	public Huevo() {
-
 	}
 
 	// Getters & Setters

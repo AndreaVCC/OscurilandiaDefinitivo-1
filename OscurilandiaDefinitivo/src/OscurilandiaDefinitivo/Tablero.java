@@ -37,23 +37,6 @@ public class Tablero {
 			
 	}
 	
-/*
-	
-	public Tablero(String[][] tablero, String[][] tablero2, ArrayList<Huevo> listaHuevos, ArrayList<Carro> listaCarros,
-			int[] id, Carro carros, Scanner teclado, int puntaje) {
-		super();
-		this.tablero = tablero;
-		this.tablero2 = tablero2;
-		this.listaHuevos = listaHuevos;
-		this.listaCarros = listaCarros;
-		this.id = id;
-		this.carros = carros;
-		this.teclado = teclado;
-		this.puntaje = puntaje;
-	}
-
-*/
-
 	// Metodo crea tablero 15x15 ---------------------//
 	public static void creaTablero() {
 		
@@ -127,7 +110,7 @@ public class Tablero {
 						alcanceTiro, colorConfeti);
 				
 				listaCarros.add(i, caguano);
-	
+				
 				
 				
 	
@@ -397,14 +380,24 @@ public class Tablero {
 					}
 					
 				}
-		
-			
-			
-				
 			}while (seguir == true);
 		
 			
 		}
+	
+	public static void imprimeCarros() {
+		System.out.println("Entra a imprimir Carros");
+		for (int i=0; i<=listaCarros.size();i++) {
+
+			if (listaCarros == null || listaCarros.isEmpty())  {
+				System.out.println("No hay Carros ingresados");
+			}
+			else {
+				System.out.println(listaCarros);
+			}
+				
+		}
+	}
 		
 		
 }

@@ -64,10 +64,5 @@ public class Kromi extends Carro{
 		return super.toString() + "Kromi [anioFabricacion=" + anioFabricacion + ", marca=" + marca + "]";
 	}
 
-	//Método imprimir
-	public void imprimir() {
-		super.imprimir();
-		System.out.println("Año Fabricación: " + getAnioFabricacion() + "\n Marca: " + getMarca());
-	}
 
 }

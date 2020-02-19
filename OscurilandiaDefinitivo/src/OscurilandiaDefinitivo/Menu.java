@@ -14,12 +14,12 @@ import java.util.Scanner;
  */
 public class Menu {
 	public static void menu() {
-		@SuppressWarnings("resource") //Para evitar el warning que da scanner por no cerrarlo (Si se cierra da error de NoSuchElementException)
+		//@SuppressWarnings("resource") //Para evitar el warning que da scanner por no cerrarlo (Si se cierra da error de NoSuchElementException)
 		Scanner scanner = new Scanner(System.in);
-
+		boolean salir = true;
 		scanner = new Scanner (System.in);
 		int opcion = 0; 
-
+		do {
 			System.out.println("*************************");
 			System.out.println("* Oscurilandia the game *");
 			System.out.println("*************************");
@@ -34,25 +34,30 @@ public class Menu {
 				case 1: 
 					Tablero.agregarCarro(); 
 					Tablero.muestraTablero(); 
-					break;//LLamando al método agregar carro
-	
+				//	break;//LLamando al método agregar carro
+					
 				case 2: 
 					Tablero.muestraTablero(); 
-					break;//LLamando al método mostrar tablero
+				//	break;//LLamando al método mostrar tablero
 	
 				case 3: 
 					Tablero.lanzarHuevo(); 
-					break;//LLamando al método lanzar huevo, no me muestra el puntaje y se devuelve al menú central >:(
+				//	break;//LLamando al método lanzar huevo, no me muestra el puntaje y se devuelve al menú central >:(
 				
 				case 4: 
-					System.out.println("caso4 ");//calcularPuntajes() no puesto aún
+					System.out.println("Mostrar Carros");
+					Tablero.imprimeCarros();
+					//System.out.println("caso4 ");//calcularPuntajes() no puesto aún
+					salir = false;
 					break;
-				
+					
 				default: 
 					System.out.println("Saliendo..."); //Devuelve el puntaje actual y si deseo continuar, y no sé por qué >:(
+					
 					break;
-				
+					
 			}while (opcion < 4);
+		}while (salir = true);
 			
 
 	}

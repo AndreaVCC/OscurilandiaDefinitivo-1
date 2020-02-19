@@ -89,10 +89,6 @@ public class Carro {
 				+ ubicacionX + ", ubicacionY=" + ubicacionY + ", numCoche=" + numCoche + "]";
 	}
 
-	//Metodo imprimir
-	public void imprimir() {
-		System.out.println("Cantidad Ocupantes: " + getCantidadOcupantes() + "\n Fecha de Ingreso: " + getFechaIngreso() + "\n ubicaci�n Tablero: " + ubicacionX + "," + ubicacionY + "\n Numero de Coche: " + numCoche);	
-	}
 
 
 }

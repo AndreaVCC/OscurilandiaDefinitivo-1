@@ -59,10 +59,5 @@ public class Caguano extends Carro{
 		return super.toString() + "Caguano [alcanceTiro=" + alcanceTiro + ", colorConfeti=" + colorConfeti + "]";
 	}
 
-	//Método imprimir
-	public void imprimir() {
-		super.imprimir();
-		System.out.println("Alcance tiro: " + getAlcanceTiro() + "\n Color del Confeti: " + getColorConfeti());
-	}
 
 }	

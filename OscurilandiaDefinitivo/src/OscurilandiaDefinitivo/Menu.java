@@ -28,6 +28,7 @@ public class Menu {
 			System.out.print("Ingrese Opcion: ");
 			opcion = scanner.nextInt();
 
+			
 			switch (opcion){
 			
 				case 1: 

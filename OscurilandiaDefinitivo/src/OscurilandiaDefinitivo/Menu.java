@@ -34,15 +34,15 @@ public class Menu {
 				case 1: 
 					Tablero.agregarCarro(); 
 					Tablero.muestraTablero(); 
-				//	break;//LLamando al metodo agregar carro
+					break;//LLamando al metodo agregar carro
 					
 				case 2: 
 					Tablero.muestraTablero(); 
-				//	break;//LLamando al emtodo mostrar tablero
+					break;//LLamando al emtodo mostrar tablero
 	
 				case 3: 
 					Tablero.lanzarHuevo(); 
-				//	break;//LLamando al metodo lanzar huevo, no me muestra el puntaje y se devuelve al menú central >:(
+					break;//LLamando al metodo lanzar huevo, no me muestra el puntaje y se devuelve al menú central >:(
 				
 				case 4: 
 					System.out.println("Mostrar Carros");
@@ -50,14 +50,16 @@ public class Menu {
 					//System.out.println("caso4 ");//calcularPuntajes() no puesto aún
 					
 					break;
+				case 5:
+					salir = false;
 					
 				default: 
 					System.out.println("Saliendo..."); //Devuelve el puntaje actual y si deseo continuar, y no sé por qué >:(
 					salir = false;
 					break;
-					
+			}		
 			}while (opcion < 4);
-		}while (salir = true);
+
 	}
 
 

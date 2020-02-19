@@ -70,7 +70,7 @@ public class Tablero {
 		creaTablero();
 	
 		
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 5; i++) {
 			System.out.println("Ingrese informacion comun de los coches: ");
 			System.out.println("Cantidad de ocupantes:");
 			int cantidadOcupantes = teclado.nextInt();
@@ -304,53 +304,27 @@ public class Tablero {
 								huevo.setFilaCaida(fil);
 								huevo.setColumnaCaida(col);
 								huevo.setPuntaje(puntaje);
-								listaHuevos.add(huevo);
-								for (Huevo huevoslanzados: listaHuevos) {
-									System.out.println(huevoslanzados);
-								}
+								listaHuevos.add(huevo);							
 								
-								
-									System.out.println(fil);
-									System.out.println(col);
-									System.out.println("ubicacion encontrada");
-									tablero[fil][col] = "X";						
-									carros.getUbicacionX();
-									carros.getUbicacionY();
-									for (Carro recorre:listaCarros) {
-										
-										if (recorre.getClass().toString().contentEquals("class pruebasdeexamen.Caguano")) {
-					
-											if (recorre.getUbicacionX() == fil) {
-						
-												if (recorre.getUbicacionY() == col) {
-													if (tablero[fil][col+1]== "X"){
-														System.out.println("Encontro posicion exacta Caguano");
-														System.out.println("10 puntos EXTRA");
-													
-														this.puntaje = this.puntaje + 7;
-														
-													}
-													
-												}
-											} else {
-										         if (col - recorre.getUbicacionY() == 1) {
-										        	 System.out.println("encontro posicion 1");
-										        		if (tablero[fil][col-1]== "X") {
-															
-										        			System.out.println("10 puntos EXTRA Caguano");
-										        			this.puntaje = this.puntaje + 7;
-													
-												
-										        		}
-										         }
-										   
-												
-											}
-								
-										}	
+								System.out.println(fil);
+								System.out.println(col);
+								tablero[fil][col] = "X";						
+								carros.getUbicacionX();
+								carros.getUbicacionY();
+								for (Carro recorre:listaCarros) {	
+									if (recorre.getUbicacionX() == fil) {
+										if (recorre.getUbicacionY() == col && tablero[fil][col+1].equals("X")) {
+											System.out.println("Encontro posicion exacta Caguano 1");
+											System.out.println("7 puntos EXTRA Caguano");
+											this.puntaje = this.puntaje + 7;
+										} else  if (col - recorre.getUbicacionY() == 1 && tablero[fil][col-1].equals("X")) {
+										       System.out.println("7 puntos EXTRA Caguano 2");
+										       this.puntaje = this.puntaje + 7;
+										}			
+										         
 									}
-									
-								
+								}
+
 							}
 							else {
 								if (tablero[fil][col].equals("K")) {
@@ -365,56 +339,27 @@ public class Tablero {
 										
 									
 									for (Carro recorre:listaCarros) {
-							
-										if (recorre.getClass().toString().contentEquals("class pruebasdeexamen.Kromi")) {
-					
-											if (recorre.getUbicacionY() == col) {
-						
-												if (recorre.getUbicacionX() == fil) {
-													if (tablero[fil+1][col].equals("X") && tablero[fil+2][col].equals("X") ){
-														System.out.println("Encontro posicion exacta Kromi");
-														System.out.println("10 puntos EXTRA Kromi");
-													
-														this.puntaje = this.puntaje + 10;
+										if (recorre.getUbicacionY() == col) {
+											if (recorre.getUbicacionX() == fil && tablero[fil+1][col].equals("X") && tablero[fil+2][col].equals("X")){														
+												System.out.println("10 puntos EXTRA Kromi");
+												this.puntaje = this.puntaje + 10;
 														
-													}
-													
-												}
-											} else {
-										         if (fil - recorre.getUbicacionX() == 1) {
-										        	 System.out.println("encontro posicion 1");
-										        		if (tablero[fil-1][col].equals("X") && tablero[fil+1][col].equals("X") ) {
-															
-										        			System.out.println("10 puntos EXTRA Kromi");
-										        			this.puntaje = this.puntaje + 10;
-													
-												
-										        		}
-										         }
-										         else {
-										        	 if (fil - recorre.getUbicacionX() == 2) {
-										        		 System.out.println("encontro posicion 2");
-										        		 if (tablero[fil-1][col].equals("X") && tablero[fil-2][col].equals("X") ) {
-										        	
-										        			 System.out.println("10 puntos EXTRA Kromi");
-										        			this.puntaje = this.puntaje + 10;
-										   
-										        			 
-										        
-										        		 }
-										        	 }
-														
-										        		 
-										        }
-												
-											}
-								
-										}	
+											}else if (fil - recorre.getUbicacionX() == 1 && tablero[fil-1][col].equals("X") && tablero[fil+1][col].equals("X")){
+								       			System.out.println("10 puntos EXTRA Kromi");
+										        this.puntaje = this.puntaje + 10;
+										     
+											}else if (fil - recorre.getUbicacionX() == 2 && tablero[fil-1][col].equals("X") && tablero[fil-2][col].equals("X")){
+										      	System.out.println("10 puntos EXTRA Kromi");
+										        this.puntaje = this.puntaje + 10;
+											}										   
+										}
 									}
-								}
+														
+								}	 
 							}
-
+												
 						}
+						
 				}
 					
 					else {
@@ -447,6 +392,8 @@ public class Tablero {
 		
 			
 		}
+		
+
 		
 }
 

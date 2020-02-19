@@ -29,15 +29,15 @@ public class Menu {
 			opcion = scanner.nextInt();
 
 			switch (opcion){
-			case 1: Tablero.agregarCarro(); Tablero.muestraTablero(); break;//LLamando al método agregar carro
-
-			case 2: Tablero.muestraTablero(); break;//LLamando al método mostrar tablero
-
-			case 3: Tablero.lanzarHuevo(); break;//LLamando al método lanzar huevo, no me muestra el puntaje y se devuelve al menú central >:(
-			case 4: System.out.println("caso4 ");//calcularPuntajes() no puesto aún
-			break;
-			default: System.out.println("Saliendo..."); //Devuelve el puntaje actual y si deseo continuar, y no sé por qué >:(
-			break;
+				case 1: Tablero.agregarCarro(); Tablero.muestraTablero(); break;//LLamando al método agregar carro
+	
+				case 2: Tablero.muestraTablero(); break;//LLamando al método mostrar tablero
+	
+				case 3: Tablero.lanzarHuevo(); break;//LLamando al método lanzar huevo, no me muestra el puntaje y se devuelve al menú central >:(
+				case 4: System.out.println("caso4 ");//calcularPuntajes() no puesto aún
+				break;
+				default: System.out.println("Saliendo..."); //Devuelve el puntaje actual y si deseo continuar, y no sé por qué >:(
+				break;
 			}while (opcion < 4);
 			
 
@@ -53,6 +53,7 @@ public class Menu {
 
 		//Tablero tablero = new Tablero();
 		Tablero.creaTablero();
+		
 		//Llamando a menú
 		menu();
 	}

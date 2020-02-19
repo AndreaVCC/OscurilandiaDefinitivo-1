@@ -1,6 +1,6 @@
 /* Definicion de la Clase Tablero
-*Los métodos quedaron como static, para que el menú pudiese llamarlos, y viceversa. 
-*Al cambiar a static, se cambiaron también algunas líneas de los constructores, porque sino daba errores y warnings.
+*Los mÃ©todos quedaron como static, para que el menÃº pudiese llamarlos, y viceversa. 
+*Al cambiar a static, se cambiaron tambiÃ©n algunas lÃ­neas de los constructores, porque sino daba errores y warnings.
  * 
  * 
  */
@@ -11,6 +11,11 @@ import java.util.ArrayList;
 
 import java.util.*;
 
+/**
+ * clase que representa el terreno en el que se ubica cada carro y en el cual se  sitÃºan los proyectiles.
+ * @author DPJA
+ * @version 1.0
+ */
 public class Tablero {
 
 
@@ -38,12 +43,18 @@ public class Tablero {
 		Tablero.puntaje = puntaje;
 
 	}
-
+	
+	/**
+     	* Constructor por defecto.
+     	*/
 	public Tablero () {
 			
 	}
 	
 	// Metodo crea tablero 15x15 ---------------------//
+	/**
+	 * Metodo que crea un tablero de 15 columnas y 15 filas.
+	 */
 	public static void creaTablero() {
 		
 	// Rellenar tablero completo con signo + ---------//
@@ -57,6 +68,9 @@ public class Tablero {
 	
 	
 	// Crear arraylist con todos los coches
+		/**
+	 	* Metodo que agrega 18 carros. 3 tipo Kromi, 5 tipo Caguano y 10 tipo Trupalla.
+	 	*/
 		public static void agregarCarro() {
 		//Scanner teclado = new Scanner(System.in);
 		creaTablero();
@@ -77,7 +91,7 @@ public class Tablero {
 	
 			if (i <= 2) {
 				System.out.println("Ingrese informacion de coches tipo Kromi");
-				System.out.println("Año fabricacion:");
+				System.out.println("AÃ±o fabricacion:");
 				int anioFabricacion = teclado.nextInt();
 				System.out.println("Marca:");
 				String marca = teclado.next();
@@ -151,6 +165,9 @@ public class Tablero {
 		
 		
 	// Posicionar dentro de la tablero los carros... Kromis
+	/**
+	 * Metodo que posiciona de manera aleatoria los carros de tipo Kromi.
+	 */
 	public static void posicionaKromis() {
 		//String posxy = " ";
 		boolean pos = false;
@@ -180,6 +197,9 @@ public class Tablero {
 		
 	}
 	
+	/**
+	 * Metodo que posiciona de manera aleatoria los carros de tipo Caguanos.
+	 */
 	public static void posicionarCanguanos() {
 	// Posicionar dentro de la tablero los carros... Canguanos
 		boolean pos = false;
@@ -208,6 +228,9 @@ public class Tablero {
 	
 	}
 	
+	/**
+	 * Metodo que posiciona de manera aleatoria los carros de tipo Trupallas.
+	 */
 	public static void posicionarTrupallas() {
 	// Posicionar dentro de la tablero los carros... Trupallas
 		boolean pos = false;
@@ -235,7 +258,11 @@ public class Tablero {
 		
 	}
 	
-	// Mostrar tablero 
+	// Mostrar tablero
+	
+	/**
+	 * Metodo que muestra el tablero generado.
+	 */
 	public static void muestraTablero() {
 		System.out.println(" ");
 		for (int x=0; x < tablero.length; x++) {
@@ -249,6 +276,9 @@ public class Tablero {
 
 	// Metodo lanza huevos a coches
 
+	/**
+	 * Metodo que lanza huevos y genera puntos segun el coche.
+	 */
 	public static void lanzarHuevo () {
 		System.out.println("**Bienvenido a Oscurilandia**");
 	
@@ -326,7 +356,7 @@ public class Tablero {
 					Tablero.muestraTablero();
 					System.out.println("Puntaje actual: " + puntaje);
 				
-					System.out.println("¿Desea continuar Y / N ?");
+					System.out.println("Â¿Desea continuar Y / N ?");
 					String cont = teclado.next();
 					if (cont.equalsIgnoreCase("N")){	
 						seguir = false;

@@ -1,5 +1,5 @@
-/*Menu creado como método estático para que pueda ser llamado desde diferentes clases, en caso de ser necesario.
-*Si necesitan editar, se debe comentar el @SupressWarnings o nunca mostrará si hay errores.
+/*Menu creado como mÃ©todo estÃ¡tico para que pueda ser llamado desde diferentes clases, en caso de ser necesario.
+*Si necesitan editar, se debe comentar el @SupressWarnings o nunca mostrarÃ¡ si hay errores.
 *
 *
 */
@@ -7,6 +7,11 @@ package OscurilandiaDefinitivo;
 
 import java.util.Scanner;
 
+/**
+ * Clase para probar la ejecucion del proyecto.
+ * @author DPJA
+ * @version 1.0
+ */
 public class Menu {
 	public static void menu() {
 		@SuppressWarnings("resource") //Para evitar el warning que da scanner por no cerrarlo (Si se cierra da error de NoSuchElementException)
@@ -18,20 +23,20 @@ public class Menu {
 			System.out.println("*************************");
 			System.out.println("* Oscurilandia the game *");
 			System.out.println("*************************");
-			System.out.println("¿Qué desea hacer? \n 1) Agregar vehículos \n 2) Mostrar carros \n 3) Jugar \n 4) Mostrar puntuación \n 5) Salir");
+			System.out.println("Â¿QuÃ© desea hacer? \n 1) Agregar vehÃ­culos \n 2) Mostrar carros \n 3) Jugar \n 4) Mostrar puntuaciÃ³n \n 5) Salir");
 			System.out.println("");
-			System.out.print("Ingrese Opción: ");
+			System.out.print("Ingrese OpciÃ³n: ");
 			opcion = scanner.nextInt();
 
 			switch (opcion){
-			case 1: Tablero.agregarCarro(); Tablero.muestraTablero(); break;//LLamando al método agregar carro
+			case 1: Tablero.agregarCarro(); Tablero.muestraTablero(); break;//LLamando al mÃ©todo agregar carro
 
-			case 2: Tablero.muestraTablero(); break;//LLamando al método mostrar tablero
+			case 2: Tablero.muestraTablero(); break;//LLamando al mÃ©todo mostrar tablero
 
-			case 3: Tablero.lanzarHuevo(); break;//LLamando al método lanzar huevo, no me muestra el puntaje y se devuelve al menú central >:(
-			case 4: System.out.println("caso4 ");//calcularPuntajes() no puesto aún
+			case 3: Tablero.lanzarHuevo(); break;//LLamando al mÃ©todo lanzar huevo, no me muestra el puntaje y se devuelve al menÃº central >:(
+			case 4: System.out.println("caso4 ");//calcularPuntajes() no puesto aÃºn
 			break;
-			default: System.out.println("Saliendo..."); //Devuelve el puntaje actual y si deseo continuar, y no sé por qué >:(
+			default: System.out.println("Saliendo..."); //Devuelve el puntaje actual y si deseo continuar, y no sÃ© por quÃ© >:(
 			break;
 			}while (opcion < 4);
 			
@@ -39,13 +44,16 @@ public class Menu {
 	}
 
 
-
+	/**
+     	* Metodo que ejecuta la prueba de la clase Tablero
+     	* @param args es un arreglo de tipo String de la linea de comandos
+     	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		//Tablero tablero = new Tablero();
 		Tablero.creaTablero();
-		//Llamando a menú
+		//Llamando a menÃº
 		menu();
 	}
 

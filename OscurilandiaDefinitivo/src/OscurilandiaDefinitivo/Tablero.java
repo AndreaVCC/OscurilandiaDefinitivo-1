@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * clase que representa el terreno en el que se ubica cada carro y en el cual se  sitúan los proyectiles.
+ * clase que representa el terreno en el que se ubica cada carro y en el cual se
+ * sitúan los proyectiles.
+ * 
  * @author DPJA
  * @version 1.0
  */
@@ -71,8 +73,8 @@ public class Tablero {
 				int anioFabricacion = teclado.nextInt();
 				System.out.println("Marca:");
 				String marca = teclado.next();
-				posicionaKromis(); 						// llamamos al metodo posicionar Kromi en Tablero
-				ubicacionX = carros.getUbicacionX(); 	// Asignamos a los atributos la posicion x e y en el tablero.
+				posicionaKromis(); // llamamos al metodo posicionar Kromi en Tablero
+				ubicacionX = carros.getUbicacionX(); // Asignamos a los atributos la posicion x e y en el tablero.
 				ubicacionY = carros.getUbicacionY();
 
 				numCoche = numCoche + 1;
@@ -91,7 +93,7 @@ public class Tablero {
 				String colorConfeti = teclado.next();
 				posicionarCanguanos();
 
-				ubicacionX = carros.getUbicacionX(); 	// Asignamos a los atributos la posicion x,y en el tablero.
+				ubicacionX = carros.getUbicacionX(); // Asignamos a los atributos la posicion x,y en el tablero.
 				ubicacionY = carros.getUbicacionY();
 
 				numCoche = numCoche + 1;
@@ -103,12 +105,13 @@ public class Tablero {
 				System.out.println("Caguano " + numCoche + " agregado con exito");
 
 			} else {
-				System.out.println("Ingrese informacion de coches tipo Trupalla");				System.out.println("Nivel de armadura:");
+				System.out.println("Ingrese informacion de coches tipo Trupalla");
+				System.out.println("Nivel de armadura:");
 				int nivelArmadura = teclado.nextInt();
 				System.out.println("Nombre conductor:");
 				String nombreConductor = teclado.nextLine();
 				posicionarTrupallas();
-				ubicacionX = carros.getUbicacionX();	// Asignamos a los atributos la posicion x,y en el tablero.
+				ubicacionX = carros.getUbicacionX(); // Asignamos a los atributos la posicion x,y en el tablero.
 				ubicacionY = carros.getUbicacionY();
 
 				numCoche = numCoche + 1;
@@ -128,8 +131,8 @@ public class Tablero {
 	public static void posicionaKromis() {
 		boolean pos = false;
 		do {
-			
-			int x = (int) (Math.random() * 13);		// Generamos numero random para posicionar
+
+			int x = (int) (Math.random() * 13); // Generamos numero random para posicionar
 			int y = (int) (Math.random() * 15);
 
 			// validamos que el tablero tenga 3 posiciones libres
@@ -149,7 +152,7 @@ public class Tablero {
 			}
 		} while (pos == false);
 	}
-	
+
 	/**
 	 * Metodo que posiciona de manera aleatoria los carros de tipo Caguanos.
 	 */
@@ -158,13 +161,13 @@ public class Tablero {
 		do {
 			int x = (int) (Math.random() * 14);
 			int y = (int) (Math.random() * 14);
-			if (tablero[x][y].equals("+") && tablero[x][y + 1].equals("+")) {  			// validamos que tablero este vacio.
+			if (tablero[x][y].equals("+") && tablero[x][y + 1].equals("+")) { // validamos que tablero este vacio.
 				tablero[x][y] = "C";
 				tablero[x][y + 1] = "C";
 
 				pos = true;
 
-				carros.setUbicacionX(x);		// Asignamos posiciones a los atributos de objeto carro
+				carros.setUbicacionX(x); // Asignamos posiciones a los atributos de objeto carro
 				carros.setUbicacionY(y);
 
 				pos = true;
@@ -181,12 +184,12 @@ public class Tablero {
 		do {
 			int x = (int) (Math.random() * 15);
 			int y = (int) (Math.random() * 15);
-			if (tablero[x][y].equals("+")) { 		// validamos que tablero este vacio.
+			if (tablero[x][y].equals("+")) { // validamos que tablero este vacio.
 				tablero[x][y] = "T";
 
 				pos = true;
 
-				carros.setUbicacionX(x);	// Asignamos posiciones a los atributos de objeto carro
+				carros.setUbicacionX(x); // Asignamos posiciones a los atributos de objeto carro
 				carros.setUbicacionY(y);
 
 				pos = true;
@@ -352,21 +355,21 @@ public class Tablero {
 		} while (seguir == true);
 
 	}
-	
+
 	/**
 	 * Metodo que muestra los carros que se guardaron en el arraylist listaCarro
 	 */
 	public static void mostrarCarros() {
-		for (Carro carro : listaCarros) {
-			
-			if (listaCarros == null || listaCarros.isEmpty()) {
-				System.out.println("No hay Carros ingresados");
-			} else {
-				System.out.println("Carro " + carro.getClass().getSimpleName() + " numero " + carro.getNumCoche()
-				+ " Ubicacion: (" + carro.getUbicacionX() + " ," + carro.getUbicacionY() + ")");
+
+		if (listaCarros.size() == 0) {
+			System.out.println("No hay Carros ingresados");
+
+		} else {
+			for (Carro carro : listaCarros) {
+
+				System.out.println(carro.imprimir());
 			}
 		}
 	}
-
 
 }

@@ -60,5 +60,8 @@ public class Caguano extends Carro{
 	
 	}
 
+	public String imprimir () {
+		return  "Caguano -Aalcance tiro=" + alcanceTiro + ", Color confeti=" + colorConfeti + super.imprimir();
+	}
 
 }	

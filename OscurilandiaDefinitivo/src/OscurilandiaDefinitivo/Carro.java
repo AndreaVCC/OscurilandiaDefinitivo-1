@@ -89,6 +89,10 @@ public class Carro {
 				+ ubicacionX + ", ubicacionY=" + ubicacionY + ", numCoche=" + numCoche + "]";
 	
 	}
+	
+	public String imprimir () {
+		return " ,Cantidad ocupantes=" + cantidadOcupantes + ", Fecha ingreso=" + fechaIngreso + ", Ubicacion (" + ubicacionX + "|" + ubicacionY + "), " + " Numero carro=" + numCoche;
+	}
 
 
 

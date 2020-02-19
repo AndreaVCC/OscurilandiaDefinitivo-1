@@ -63,6 +63,9 @@ public class Kromi extends Carro{
 	public String toString() {
 		return super.toString() + "Kromi [anioFabricacion=" + anioFabricacion + ", marca=" + marca + "]";
 	}
-
+	
+	public String imprimir () {
+		return  "Kromi - Anio fabricacion=" + anioFabricacion + ", Marca=" + marca + super.imprimir();
+	}
 
 }

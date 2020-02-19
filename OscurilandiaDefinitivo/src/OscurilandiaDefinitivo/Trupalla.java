@@ -64,5 +64,8 @@ public class Trupalla extends Carro{
 		return super.toString() + "Trupalla [nivelArmadura=" + nivelArmadura + ", nombreConductor=" + nombreConductor + "]";
 	}
 	
+	public String imprimir () {
+		return  "Trupalla - Nivel armadura=" + nivelArmadura + ", Nombre conductor=" + nombreConductor + super.imprimir();
+	}
 
 }

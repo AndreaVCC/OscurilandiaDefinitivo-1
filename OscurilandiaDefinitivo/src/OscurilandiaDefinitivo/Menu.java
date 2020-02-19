@@ -30,7 +30,7 @@ public class Menu {
 			System.out.println("* Oscurilandia the game *");
 			System.out.println("*************************");
 			System.out.println(
-					"¿Que desea hacer? \n 1) Agregar vehiculos \n 2) Mostrar carros \n 3) Lanzar huevos \n 4) Salir");
+					"¿Que desea hacer? \n 1) Agregar carros \n 2) Imprimir lista carros \n 3) Lanzar huevos \n 4) Salir");
 			System.out.println("");
 			System.out.print("Ingrese Opcion: ");
 			opcion = scanner.nextInt();
@@ -74,7 +74,7 @@ public class Menu {
 		// Tablero tablero = new Tablero();
 		Tablero.creaTablero();
 
-		// Llamando a menÃº
+		// Llamando a menu
 		menu();
 	}
 

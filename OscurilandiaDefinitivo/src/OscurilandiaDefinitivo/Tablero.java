@@ -1,4 +1,6 @@
 /* Definicion de la Clase Tablero
+*Los métodos quedaron como static, para que el menú pudiese llamarlos, y viceversa. 
+*Al cambiar a static, se cambiaron también algunas líneas de los constructores, porque sino daba errores y warnings.
  * 
  * 
  */
@@ -13,27 +15,27 @@ public class Tablero {
 
 
 	// Atributos
-	String tablero[][] = new String[15][15];
+	static String tablero[][] = new String[15][15];
 	
 	public  ArrayList <Huevo> listaHuevos = new ArrayList <>(); 
-	public ArrayList <Carro> listaCarros = new ArrayList <>();
+	public static ArrayList <Carro> listaCarros = new ArrayList <>();
 	public int[] id = new int[29];
-	Carro carros = new Carro();
+	static Carro carros = new Carro();
 	
-	Scanner teclado = new Scanner(System.in);
+	static Scanner teclado = new Scanner(System.in);
 	
-	int puntaje=0;
+	static int puntaje=0;
 	
 	
 	// Contructor
 	
 		public Tablero(String[][] tablero, ArrayList<Huevo> listaHuevos, ArrayList<Carro> listaCarros, Carro carros,
 			int puntaje) {
-		this.tablero = tablero;
+		Tablero.tablero = tablero;
 		this.listaHuevos = listaHuevos;
-		this.listaCarros = listaCarros;
-		this.carros = carros;
-		this.puntaje = puntaje;
+		Tablero.listaCarros = listaCarros;
+		Tablero.carros = carros;
+		Tablero.puntaje = puntaje;
 
 	}
 
@@ -42,7 +44,7 @@ public class Tablero {
 	}
 	
 	// Metodo crea tablero 15x15 ---------------------//
-	public void creaTablero() {
+	public static void creaTablero() {
 		
 	// Rellenar tablero completo con signo + ---------//
 			
@@ -55,12 +57,12 @@ public class Tablero {
 	
 	
 	// Crear arraylist con todos los coches
-		public void agregarCarro() {
+		public static void agregarCarro() {
 		//Scanner teclado = new Scanner(System.in);
 		creaTablero();
 	
 		
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 5; i++) {
 			System.out.println("Ingrese informacion comun de los coches: ");
 			System.out.println("Cantidad de ocupantes:");
 			int cantidadOcupantes = teclado.nextInt();
@@ -75,7 +77,7 @@ public class Tablero {
 	
 			if (i <= 2) {
 				System.out.println("Ingrese informacion de coches tipo Kromi");
-				System.out.println("Anio fabricacion:");
+				System.out.println("Año fabricacion:");
 				int anioFabricacion = teclado.nextInt();
 				System.out.println("Marca:");
 				String marca = teclado.next();
@@ -149,7 +151,7 @@ public class Tablero {
 		
 		
 	// Posicionar dentro de la tablero los carros... Kromis
-	public void posicionaKromis() {
+	public static void posicionaKromis() {
 		//String posxy = " ";
 		boolean pos = false;
 		do {
@@ -178,7 +180,7 @@ public class Tablero {
 		
 	}
 	
-	public void posicionarCanguanos() {
+	public static void posicionarCanguanos() {
 	// Posicionar dentro de la tablero los carros... Canguanos
 		boolean pos = false;
 		do {
@@ -206,7 +208,7 @@ public class Tablero {
 	
 	}
 	
-	public void posicionarTrupallas() {
+	public static void posicionarTrupallas() {
 	// Posicionar dentro de la tablero los carros... Trupallas
 		boolean pos = false;
 		do {
@@ -234,20 +236,21 @@ public class Tablero {
 	}
 	
 	// Mostrar tablero 
-	public void muestraTablero() {
+	public static void muestraTablero() {
 		System.out.println(" ");
 		for (int x=0; x < tablero.length; x++) {
 			for (int y=0; y < tablero[x].length; y++) {
 				System.out.print(tablero[x][y]+" ");
 			}
-			 System.out.println();
+			 System.out.println();					 
 		}
+		Menu.menu();
 	}
 
 	// Metodo lanza huevos a coches
 
-	public void lanzarHuevo () {
-		System.out.println("Binvenido a Oscurilandia");
+	public static void lanzarHuevo () {
+		System.out.println("**Bienvenido a Oscurilandia**");
 	
 				
 		boolean seguir = false;
@@ -320,10 +323,10 @@ public class Tablero {
 							tablero[fil][col] = "H";
 						}
 					}
-					muestraTablero();
+					Tablero.muestraTablero();
 					System.out.println("Puntaje actual: " + puntaje);
 				
-					System.out.println("Â¿Desea continuar Y / N ?");
+					System.out.println("¿Desea continuar Y / N ?");
 					String cont = teclado.next();
 					if (cont.equalsIgnoreCase("N")){	
 						seguir = false;

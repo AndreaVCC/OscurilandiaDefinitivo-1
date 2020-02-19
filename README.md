@@ -10,7 +10,7 @@ Es un juego realizado en Java que se ejecuta en la consola de un IDE (Entorno de
 
 - Ejecutar la clase Menú.
 - Ingresar los datos para la creacion de los tres tipos de carros :car: :blue_car: 🚛 .
-- Indicar la posicion de los huevos que lanzaras :dart: para destruir los coches generados en el tablero para acumular puntos.:trophy:
+- Indicar la posición :dart: de los huevos que lanzaras para destruir :boom: los coches generados en el tablero Y acumular puntos.:trophy:
 
 ## Autores
 

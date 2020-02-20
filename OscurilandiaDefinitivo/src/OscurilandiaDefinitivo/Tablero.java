@@ -20,15 +20,11 @@ import java.util.Scanner;
 public class Tablero {
 
 	static String tablero[][] = new String[15][15];
-
-
 	public static ArrayList<Huevo> listaHuevos = new ArrayList<>();
 	public static ArrayList<Carro> listaCarros = new ArrayList<>();
 	public int[] id = new int[29];
 	static Carro carros = new Carro();
-
 	static Scanner teclado = new Scanner(System.in);
-
 	static int puntaje = 0;
 	//static boolean evalua = true;
 

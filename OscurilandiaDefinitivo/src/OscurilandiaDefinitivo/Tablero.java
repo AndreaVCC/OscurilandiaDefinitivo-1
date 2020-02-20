@@ -1,6 +1,6 @@
 /* Definicion de la Clase Tablero
-*Los mÃ©todos quedaron como static, para que el menÃº pudiese llamarlos, y viceversa. 
-*Al cambiar a static, se cambiaron tambiÃ©n algunas lÃ­neas de los constructores, porque sino daba errores y warnings.
+ *Los mÃ©todos quedaron como static, para que el menÃº pudiese llamarlos, y viceversa. 
+ *Al cambiar a static, se cambiaron tambiÃ©n algunas lÃ­neas de los constructores, porque sino daba errores y warnings.
  * 
  * 
  */
@@ -41,7 +41,7 @@ public class Tablero {
 		for (int x = 0; x < tablero.length; x++) {
 			for (int y = 0; y < tablero[x].length; y++) {
 				tablero[x][y] = "+";
-				
+
 			}
 		}
 	}
@@ -208,7 +208,7 @@ public class Tablero {
 			System.out.println();
 		}
 
-	
+
 	}
 
 	/**
@@ -216,138 +216,138 @@ public class Tablero {
 	 */
 	public static void lanzarHuevo() {
 
-	if (listaCarros.size() == 0) {
-		System.out.println("No hay Coches registrados");
-	}else{
-		System.out.println("Binvenido a Oscurilandia");
-		Huevo huevo = new Huevo();
-		puntaje = 0;
+		if (listaCarros.size() == 0) {
+			System.out.println("No hay Coches registrados");
+		}else{
+			System.out.println("Binvenido a Oscurilandia");
+			Huevo huevo = new Huevo();
+			puntaje = 0;
 
-		boolean seguir = false;
-		do {
-			System.out.println("Puntaje actual: " + puntaje);
+			boolean seguir = false;
+			do {
+				System.out.println("Puntaje actual: " + puntaje);
 
-			System.out.print("Ingrese Fila entre 0 y 14: ");
-			int fil = teclado.nextInt();
-			System.out.print("Ingrese Columna entre 0 y 14:");
-			int col = teclado.nextInt();
+				System.out.print("Ingrese Fila entre 0 y 14: ");
+				int fil = teclado.nextInt();
+				System.out.print("Ingrese Columna entre 0 y 14:");
+				int col = teclado.nextInt();
 
-			// validamos que el lanzamiento este dentro del tablero
-			if (fil > 14 || col > 14) {
-				System.out.println("coordenadas fuera del recuadro... vuelva a intentarlo");
-				seguir = true;
+				// validamos que el lanzamiento este dentro del tablero
+				if (fil > 14 || col > 14) {
+					System.out.println("coordenadas fuera del recuadro... vuelva a intentarlo");
+					seguir = true;
 
-			} else {
+				} else {
 
-				if (tablero[fil][col].equals("T") || tablero[fil][col].equals("C") || tablero[fil][col].equals("K")) {
-					if (tablero[fil][col].equals("T")) {
-						puntaje = puntaje + 1;
-						System.out.println("Trupalla inutilizado");
-						System.out.println("Puntaje actual: " + puntaje);
-						tablero[fil][col] = "X";
-					
-						huevo.setFilaCaida(fil);
-						huevo.setColumnaCaida(col);
-						huevo.setPuntaje(puntaje);
-						listaHuevos.add(huevo);
-						for (Huevo huevoslanzados : listaHuevos) {
-							System.out.println(huevoslanzados);
-						}
-
-					} else {
-						if (tablero[fil][col].equals("C")) {
-							puntaje = puntaje + 2;
+					if (tablero[fil][col].equals("T") || tablero[fil][col].equals("C") || tablero[fil][col].equals("K")) {
+						if (tablero[fil][col].equals("T")) {
+							puntaje = puntaje + 1;
+							System.out.println("Trupalla inutilizado");
 							System.out.println("Puntaje actual: " + puntaje);
+							tablero[fil][col] = "X";
+
 							huevo.setFilaCaida(fil);
 							huevo.setColumnaCaida(col);
 							huevo.setPuntaje(puntaje);
 							listaHuevos.add(huevo);
-
-							System.out.println(fil);
-							System.out.println(col);
-							tablero[fil][col] = "X";
-						
-							carros.getUbicacionX();
-							carros.getUbicacionY();
-							for (Carro recorre : listaCarros) {
-								if (recorre.getUbicacionX() == fil) {
-									if (recorre.getUbicacionY() == col && tablero[fil][col + 1].equals("X")) {
-										System.out.println("Encontro posicion exacta Caguano 1");
-										System.out.println("7 puntos EXTRA Caguano");
-										puntaje = puntaje + 7;
-									} else if (col - recorre.getUbicacionY() == 1
-											&& tablero[fil][col - 1].equals("X")) {
-										System.out.println("7 puntos EXTRA Caguano 2");
-										puntaje = puntaje + 7;
-									}
-
-								}
+							for (Huevo huevoslanzados : listaHuevos) {
+								System.out.println(huevoslanzados);
 							}
 
 						} else {
-							if (tablero[fil][col].equals("K")) {
-								puntaje = puntaje + 3;
-
+							if (tablero[fil][col].equals("C")) {
+								puntaje = puntaje + 2;
 								System.out.println("Puntaje actual: " + puntaje);
-								tablero[fil][col] = "X";
-						
 								huevo.setFilaCaida(fil);
 								huevo.setColumnaCaida(col);
 								huevo.setPuntaje(puntaje);
 								listaHuevos.add(huevo);
 
+								System.out.println(fil);
+								System.out.println(col);
+								tablero[fil][col] = "X";
+
+								carros.getUbicacionX();
+								carros.getUbicacionY();
 								for (Carro recorre : listaCarros) {
-									if (recorre.getUbicacionY() == col) {
-										if (recorre.getUbicacionX() == fil && tablero[fil + 1][col].equals("X")
-												&& tablero[fil + 2][col].equals("X")) {
-											System.out.println("10 puntos EXTRA Kromi");
-											puntaje = puntaje + 10;
-
-										} else if (fil - recorre.getUbicacionX() == 1
-												&& tablero[fil - 1][col].equals("X")
-												&& tablero[fil + 1][col].equals("X")) {
-											System.out.println("10 puntos EXTRA Kromi");
-											puntaje = puntaje + 10;
-
-										} else if (fil - recorre.getUbicacionX() == 2
-												&& tablero[fil - 1][col].equals("X")
-												&& tablero[fil - 2][col].equals("X")) {
-											System.out.println("10 puntos EXTRA Kromi");
-											puntaje = puntaje + 10;
+									if (recorre.getUbicacionX() == fil) {
+										if (recorre.getUbicacionY() == col && tablero[fil][col + 1].equals("X")) {
+											System.out.println("Encontro posicion exacta Caguano 1");
+											System.out.println("7 puntos EXTRA Caguano");
+											puntaje = puntaje + 7;
+										} else if (col - recorre.getUbicacionY() == 1
+												&& tablero[fil][col - 1].equals("X")) {
+											System.out.println("7 puntos EXTRA Caguano 2");
+											puntaje = puntaje + 7;
 										}
+
 									}
 								}
 
+							} else {
+								if (tablero[fil][col].equals("K")) {
+									puntaje = puntaje + 3;
+
+									System.out.println("Puntaje actual: " + puntaje);
+									tablero[fil][col] = "X";
+
+									huevo.setFilaCaida(fil);
+									huevo.setColumnaCaida(col);
+									huevo.setPuntaje(puntaje);
+									listaHuevos.add(huevo);
+
+									for (Carro recorre : listaCarros) {
+										if (recorre.getUbicacionY() == col) {
+											if (recorre.getUbicacionX() == fil && tablero[fil + 1][col].equals("X")
+													&& tablero[fil + 2][col].equals("X")) {
+												System.out.println("10 puntos EXTRA Kromi");
+												puntaje = puntaje + 10;
+
+											} else if (fil - recorre.getUbicacionX() == 1
+													&& tablero[fil - 1][col].equals("X")
+													&& tablero[fil + 1][col].equals("X")) {
+												System.out.println("10 puntos EXTRA Kromi");
+												puntaje = puntaje + 10;
+
+											} else if (fil - recorre.getUbicacionX() == 2
+													&& tablero[fil - 1][col].equals("X")
+													&& tablero[fil - 2][col].equals("X")) {
+												System.out.println("10 puntos EXTRA Kromi");
+												puntaje = puntaje + 10;
+											}
+										}
+									}
+
+								}
 							}
+
 						}
 
 					}
 
-				}
-
-				else {
-					if (tablero[fil][col].equals("X"))
-						System.out.println("");
 					else {
-						tablero[fil][col] = "H";
-				
+						if (tablero[fil][col].equals("X"))
+							System.out.println("");
+						else {
+							tablero[fil][col] = "H";
+
+						}
 					}
+					muestraTablero();
+					System.out.println("Puntaje actual: " + puntaje);
+
+					System.out.println("¿Desea continuar Y / N ?");
+					String cont = teclado.next();
+					if (cont.equalsIgnoreCase("N")) {
+						seguir = false;
+
+					} else {
+						seguir = true;
+					}
+
 				}
-				muestraTablero();
-				System.out.println("Puntaje actual: " + puntaje);
-
-				System.out.println("¿Desea continuar Y / N ?");
-				String cont = teclado.next();
-				if (cont.equalsIgnoreCase("N")) {
-					seguir = false;
-
-				} else {
-					seguir = true;
-				}
-
-			}
-		} while (seguir == true);
-	}
+			} while (seguir == true);
+		}
 
 	}
 
@@ -366,5 +366,5 @@ public class Tablero {
 			}
 		}
 	}
-	
+
 }

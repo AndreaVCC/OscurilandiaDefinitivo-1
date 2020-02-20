@@ -57,7 +57,7 @@ public class Trupalla extends Carro {
 	/**
 	 * Define nivel de armadura
 	 * 
-	 * @param nivelArmadura
+	 * @param nivelArmadura Define nivel de armadura de Trupalla.
 	 */
 	public void setNivelArmadura(int nivelArmadura) {
 		this.nivelArmadura = nivelArmadura;

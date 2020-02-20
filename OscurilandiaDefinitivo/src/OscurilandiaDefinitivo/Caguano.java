@@ -50,7 +50,7 @@ public class Caguano extends Carro {
 	/**
 	 * Define alcance de tiro
 	 * 
-	 * @param alcanceTiro
+	 * @param alcanceTiro. Define alcance de tiro del caguano.
 	 */
 	public void setAlcanceTiro(int alcanceTiro) {
 		this.alcanceTiro = alcanceTiro;
@@ -68,7 +68,7 @@ public class Caguano extends Carro {
 	/**
 	 * Define color confeti
 	 * 
-	 * @param colorConfeti
+	 * @param colorConfeti Define color confeti
 	 */
 	public void setColorConfeti(String colorConfeti) {
 		this.colorConfeti = colorConfeti;

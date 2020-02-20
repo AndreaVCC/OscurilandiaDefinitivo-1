@@ -57,7 +57,7 @@ public class Kromi extends Carro {
 	/**
 	 * Define anio fabricacion
 	 * 
-	 * @param anioFabricacion
+	 * @param anioFabricacion Define anio fabricacion
 	 */
 	public void setAnioFabricacion(int anioFabricacion) {
 		this.anioFabricacion = anioFabricacion;
@@ -75,7 +75,7 @@ public class Kromi extends Carro {
 	/**
 	 * Define Marca
 	 * 
-	 * @param marca
+	 * @param Define Marca de Kromi
 	 */
 	public void setMarca(String marca) {
 		this.marca = marca;

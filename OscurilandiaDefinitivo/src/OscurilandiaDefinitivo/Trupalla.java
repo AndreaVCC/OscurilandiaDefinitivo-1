@@ -48,7 +48,7 @@ public class Trupalla extends Carro {
 	/**
 	 * Metodo retorna nivel de armadura del carro
 	 * 
-	 * @return Nivel armadura
+	 * @return Nivel armadura de Trupalla.
 	 */
 	public int getNivelArmadura() {
 		return nivelArmadura;
@@ -66,7 +66,7 @@ public class Trupalla extends Carro {
 	/**
 	 * Metodo retorna nombre conductor
 	 * 
-	 * @return Nombre conductor
+	 * @return nombreConductor. Retorna nombre de conductor de Trupalla
 	 */
 	public String getNombreConductor() {
 		return nombreConductor;
@@ -75,7 +75,7 @@ public class Trupalla extends Carro {
 	/**
 	 * Define nombre de conductor
 	 * 
-	 * @param nombreConductor Define nombre de conductor
+	 * @param nombreConductor Define nombre de conductor de Trupalla.
 	 */
 	public void setNombreConductor(String nombreConductor) {
 		this.nombreConductor = nombreConductor;

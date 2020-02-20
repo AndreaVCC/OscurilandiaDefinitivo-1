@@ -48,7 +48,7 @@ public class Caguano extends Carro {
 	/**
 	 * Metodo retorna alcance de tiro del carro
 	 * 
-	 * @return Alcance de tiro.
+	 * @return alcanceTiro Retorna el alcance de tiro de Caguano.
 	 */
 	public int getAlcanceTiro() {
 		return alcanceTiro;
@@ -57,16 +57,16 @@ public class Caguano extends Carro {
 	/**
 	 * Define alcance de tiro
 	 * 
-	 * @param alcanceTiro. Define alcance de tiro del caguano.
+	 * @param alcanceTiro. Define alcance de tiro de Caguano.
 	 */
 	public void setAlcanceTiro(int alcanceTiro) {
 		this.alcanceTiro = alcanceTiro;
 	}
 
 	/**
-	 * Metodo retorna color confeti del carro
+	 * Metodo retorna color confeti de Caguano.
 	 * 
-	 * @return Color confeti.
+	 * @return colorConfeti. Retorna el color de confeti de Caguano.
 	 */
 	public String getColorConfeti() {
 		return colorConfeti;
@@ -75,7 +75,7 @@ public class Caguano extends Carro {
 	/**
 	 * Define color confeti
 	 * 
-	 * @param colorConfeti Define color confeti
+	 * @param colorConfeti Define color de confeti de Caguano.
 	 */
 	public void setColorConfeti(String colorConfeti) {
 		this.colorConfeti = colorConfeti;
@@ -93,7 +93,7 @@ public class Caguano extends Carro {
 	}
 
 	/**
-	 * Metodo que imprime informacion de los carros tipo caguano
+	 * Metodo que imprime informacion de los carros tipo Caguano
 	 * 
 	 * @return Informacion del carro tipo Caguano
 	 */

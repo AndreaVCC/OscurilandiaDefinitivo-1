@@ -1,4 +1,4 @@
-/*Menu creado como mÃ©todo estÃ¡tico para que pueda ser llamado desde diferentes clases, en caso de ser necesario.
+/*Menu creado como metodo estatico para que pueda ser llamado desde diferentes clases, en caso de ser necesario.
 *Si necesitan editar, se debe comentar el @SupressWarnings o nunca mostrarÃ¡ si hay errores.
 *
 *
@@ -19,8 +19,8 @@ public class Menu {
 	 * Metodo que genera el menu 
 	 */
 	public static void menu() {
-		 @SuppressWarnings("resource") //Para evitar el warning que da scanner por no
-		// cerrarlo (Si se cierra da error de NoSuchElementException)
+		 @SuppressWarnings("resource") /*Para evitar el warning que da scanner por no
+		 cerrarlo (Si se cierra da error de NoSuchElementException)*/
 		Scanner scanner = new Scanner(System.in);
 		
 		scanner = new Scanner(System.in);

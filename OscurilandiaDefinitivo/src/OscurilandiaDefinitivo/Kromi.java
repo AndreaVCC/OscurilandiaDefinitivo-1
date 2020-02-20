@@ -57,16 +57,16 @@ public class Kromi extends Carro {
 	/**
 	 * Define anio fabricacion
 	 * 
-	 * @param anioFabricacion Define anio fabricacion
+	 * @param anioFabricacion Define anio fabricacion.
 	 */
 	public void setAnioFabricacion(int anioFabricacion) {
 		this.anioFabricacion = anioFabricacion;
 	}
 
 	/**
-	 * Metodo retorna marca del carro
+	 * Metodo retorna marca del carro.
 	 * 
-	 * @return marca carro
+	 * @return marca. Retorna marca del carro.
 	 */
 	public String getMarca() {
 		return marca;

@@ -19,10 +19,10 @@ public class Menu {
 	 * Metodo que genera el menu 
 	 */
 	public static void menu() {
-		// @SuppressWarnings("resource") //Para evitar el warning que da scanner por no
+		 @SuppressWarnings("resource") //Para evitar el warning que da scanner por no
 		// cerrarlo (Si se cierra da error de NoSuchElementException)
 		Scanner scanner = new Scanner(System.in);
-		boolean salir = true;
+		
 		scanner = new Scanner(System.in);
 		int opcion = 0;
 		do {
@@ -52,12 +52,10 @@ public class Menu {
 				break;
 						
 			case 4:
-				salir = false;
-
-			default:
 				System.out.println("Has salido del juego"); 
-											
-				salir = false;
+				break;
+			default:
+				System.out.println("Opcion invalida"); 				
 				break;
 			}
 		} while (opcion < 4);

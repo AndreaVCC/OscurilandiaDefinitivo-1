@@ -14,9 +14,9 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class Menu {
-	
+
 	/**
-	 * Metodo que genera el menu 
+	 * Metodo que genera el menu
 	 */
 	public static void menu() {
 		// @SuppressWarnings("resource") //Para evitar el warning que da scanner por no
@@ -49,13 +49,13 @@ public class Menu {
 			case 3:
 				Tablero.lanzarHuevo();
 				break;
-						
+
 			case 4:
 				salir = false;
 
 			default:
-				System.out.println("Has salido del juego"); 
-											
+				System.out.println("Has salido del juego");
+
 				salir = false;
 				break;
 			}

@@ -36,33 +36,59 @@ public class Huevo {
 	public Huevo() {
 	}
 
-	// Getters & Setters
-
+	/**
+	 * Metodo que retorna la fila de caida del huevo
+	 * @return
+	 */
 	public int getFilaCaida() {
 		return filaCaida;
 	}
 
+	/**
+	 * Metodo que define la fila de caida del huevo
+	 * @param filaCaida
+	 */
 	public void setFilaCaida(int filaCaida) {
 		this.filaCaida = filaCaida;
 	}
 
+	/**
+	 * Metodo que retorna la columna de caida del huevo
+	 * @return
+	 */
 	public int getColumnaCaida() {
 		return columnaCaida;
 	}
 
+	/**
+	 * Metodo que define la columna de caida del huevo
+	 * @param columnaCaida
+	 */
 	public void setColumnaCaida(int columnaCaida) {
 		this.columnaCaida = columnaCaida;
 	}
 
+	/**
+	 * Metodo retorna el puntaje del lanzamiento
+	 * @return
+	 */
 	public int getPuntaje() {
 		return puntaje;
 	}
 
+	/**
+	 * Metodo que define el puntaje del lanzamiento
+	 * @param puntaje
+	 */
 	public void setPuntaje(int puntaje) {
 		this.puntaje = puntaje;
 	}
 
-	// Metodo toString
+	/**
+	 * Metodo toString
+	 * 
+	 * @return Muestra la fila de caida, la columna de caida y el puntaje obtenido.
+	 */
 	@Override
 	public String toString() {
 		return "Huevo [filaCaida=" + filaCaida + ", columnaCaida=" + columnaCaida + ", puntaje=" + puntaje + "]";

@@ -17,7 +17,6 @@ import java.util.Scanner;
  * @author DPJA
  * @version 1.0
  */
-
 public class Tablero {
 
 	static String tablero[][] = new String[15][15];

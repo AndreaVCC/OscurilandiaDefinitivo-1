@@ -1,6 +1,6 @@
 /* Definicion de la Clase Tablero
-*Los métodos quedaron como static, para que el menú pudiese llamarlos, y viceversa. 
-*Al cambiar a static, se cambiaron también algunas líneas de los constructores, porque sino daba errores y warnings.
+*Los mÃ©todos quedaron como static, para que el menÃº pudiese llamarlos, y viceversa. 
+*Al cambiar a static, se cambiaron tambiÃ©n algunas lÃ­neas de los constructores, porque sino daba errores y warnings.
  * 
  * 
  */
@@ -12,15 +12,16 @@ import java.util.Scanner;
 
 /**
  * clase que representa el terreno en el que se ubica cada carro y en el cual se
- * sit�an los proyectiles.
+ * sitúan los proyectiles.
  * 
  * @author DPJA
  * @version 1.0
  */
+
 public class Tablero {
 
 	static String tablero[][] = new String[15][15];
-	static String tablero2[][] = new String[15][15];
+
 
 	public static ArrayList<Huevo> listaHuevos = new ArrayList<>();
 	public static ArrayList<Carro> listaCarros = new ArrayList<>();
@@ -30,6 +31,7 @@ public class Tablero {
 	static Scanner teclado = new Scanner(System.in);
 
 	static int puntaje = 0;
+	//static boolean evalua = true;
 
 	/**
 	 * Constructor por defecto.
@@ -44,7 +46,7 @@ public class Tablero {
 		for (int x = 0; x < tablero.length; x++) {
 			for (int y = 0; y < tablero[x].length; y++) {
 				tablero[x][y] = "+";
-				tablero2[x][y] = "+";
+				
 			}
 		}
 	}
@@ -56,7 +58,7 @@ public class Tablero {
 		// Scanner teclado = new Scanner(System.in);
 		creaTablero();
 
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 18; i++) {
 			System.out.println("Ingrese informacion comun de los coches: ");
 			System.out.println("Cantidad de ocupantes:");
 			int cantidadOcupantes = teclado.nextInt();
@@ -83,7 +85,7 @@ public class Tablero {
 						anioFabricacion, marca);
 
 				listaCarros.add(i, kromi);
-				System.out.println("Kromi " + numCoche + " agregado con exito");
+				System.out.println("Coche nº: " + numCoche + " tipo Kromi agregado con exito");
 
 			} else if (i > 2 && i <= 7) {
 				System.out.println("Ingrese informacion de coches tipo Caguano");
@@ -102,7 +104,7 @@ public class Tablero {
 						alcanceTiro, colorConfeti);
 
 				listaCarros.add(i, caguano);
-				System.out.println("Caguano " + numCoche + " agregado con exito");
+				System.out.println("Coche nº: " + numCoche + " tipo Caguano agregado con exito");
 
 			} else {
 				System.out.println("Ingrese informacion de coches tipo Trupalla");
@@ -119,7 +121,7 @@ public class Tablero {
 				Trupalla trupalla = new Trupalla(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						nivelArmadura, nombreConductor);
 				listaCarros.add(i, trupalla);
-				System.out.println("Trupalla " + numCoche + " agregado con exito");
+				System.out.println("Coche nº: " + numCoche + " tipo Trupalla agregado con exito");
 
 			}
 		}
@@ -211,20 +213,17 @@ public class Tablero {
 			System.out.println();
 		}
 
-		// Mostramos Tablero SIN Coches
-		System.out.println(" ");
-		for (int x = 0; x < tablero2.length; x++) {
-			for (int y = 0; y < tablero2[x].length; y++) {
-				System.out.print(tablero2[x][y] + " ");
-			}
-			System.out.println();
-		}
+	
 	}
 
 	/**
 	 * Metodo que lanza huevos y genera puntos segun el coche.
 	 */
 	public static void lanzarHuevo() {
+
+	if (listaCarros.size() == 0) {
+		System.out.println("No hay Coches registrados");
+	}else{
 		System.out.println("Binvenido a Oscurilandia");
 		Huevo huevo = new Huevo();
 		puntaje = 0;
@@ -251,7 +250,7 @@ public class Tablero {
 						System.out.println("Trupalla inutilizado");
 						System.out.println("Puntaje actual: " + puntaje);
 						tablero[fil][col] = "X";
-						tablero2[fil][col] = "X";
+					
 						huevo.setFilaCaida(fil);
 						huevo.setColumnaCaida(col);
 						huevo.setPuntaje(puntaje);
@@ -272,7 +271,7 @@ public class Tablero {
 							System.out.println(fil);
 							System.out.println(col);
 							tablero[fil][col] = "X";
-							tablero2[fil][col] = "X";
+						
 							carros.getUbicacionX();
 							carros.getUbicacionY();
 							for (Carro recorre : listaCarros) {
@@ -296,7 +295,7 @@ public class Tablero {
 
 								System.out.println("Puntaje actual: " + puntaje);
 								tablero[fil][col] = "X";
-								tablero2[fil][col] = "X";
+						
 								huevo.setFilaCaida(fil);
 								huevo.setColumnaCaida(col);
 								huevo.setPuntaje(puntaje);
@@ -336,7 +335,7 @@ public class Tablero {
 						System.out.println("");
 					else {
 						tablero[fil][col] = "H";
-						tablero2[fil][col] = "H";
+				
 					}
 				}
 				muestraTablero();
@@ -353,6 +352,7 @@ public class Tablero {
 
 			}
 		} while (seguir == true);
+	}
 
 	}
 
@@ -371,5 +371,5 @@ public class Tablero {
 			}
 		}
 	}
-
+	
 }

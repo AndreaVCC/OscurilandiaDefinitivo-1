@@ -84,7 +84,7 @@ public class Tablero {
 						anioFabricacion, marca);
 
 				listaCarros.add(i, kromi);
-				System.out.println("Coche nº: " + numCoche + " tipo Kromi agregado con exito");
+				System.out.println("Coche : " + numCoche + " tipo Kromi agregado con exito");
 
 			} else if (i > 2 && i <= 7) {
 				System.out.println("Ingrese informacion de coches tipo Caguano");
@@ -103,7 +103,7 @@ public class Tablero {
 						alcanceTiro, colorConfeti);
 
 				listaCarros.add(i, caguano);
-				System.out.println("Coche nº: " + numCoche + " tipo Caguano agregado con exito");
+				System.out.println("Coche : " + numCoche + " tipo Caguano agregado con exito");
 
 			} else {
 				System.out.println("Ingrese informacion de coches tipo Trupalla");
@@ -120,7 +120,7 @@ public class Tablero {
 				Trupalla trupalla = new Trupalla(cantidadOcupantes, fechaIngreso, ubicacionX, ubicacionY, numCoche,
 						nivelArmadura, nombreConductor);
 				listaCarros.add(i, trupalla);
-				System.out.println("Coche nº: " + numCoche + " tipo Trupalla agregado con exito");
+				System.out.println("Coche : " + numCoche + " tipo Trupalla agregado con exito");
 
 			}
 		}

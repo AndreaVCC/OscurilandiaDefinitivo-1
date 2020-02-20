@@ -75,7 +75,7 @@ public class Trupalla extends Carro {
 	/**
 	 * Define nombre de conductor
 	 * 
-	 * @param nombreConductor
+	 * @param nombreConductor Define nombre de conductor
 	 */
 	public void setNombreConductor(String nombreConductor) {
 		this.nombreConductor = nombreConductor;

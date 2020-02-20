@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * clase que representa el terreno en el que se ubica cada carro y en el cual se
- * sitúan los proyectiles.
+ * Clase que representa el terreno en el que se ubica cada carro y en el cual se
+ * situan los proyectiles.
  * 
  * @author DPJA
  * @version 1.0

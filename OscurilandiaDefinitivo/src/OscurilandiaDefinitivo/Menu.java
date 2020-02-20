@@ -1,5 +1,5 @@
-/*Menu creado como método estático para que pueda ser llamado desde diferentes clases, en caso de ser necesario.
-*Si necesitan editar, se debe comentar el @SupressWarnings o nunca mostrará si hay errores.
+/*Menu creado como mÃ©todo estÃ¡tico para que pueda ser llamado desde diferentes clases, en caso de ser necesario.
+*Si necesitan editar, se debe comentar el @SupressWarnings o nunca mostrarÃ¡ si hay errores.
 *
 *
 */
@@ -14,9 +14,9 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class Menu {
-
+	
 	/**
-	 * Metodo que genera el menu
+	 * Metodo que genera el menu 
 	 */
 	public static void menu() {
 		// @SuppressWarnings("resource") //Para evitar el warning que da scanner por no
@@ -30,7 +30,7 @@ public class Menu {
 			System.out.println("* Oscurilandia the game *");
 			System.out.println("*************************");
 			System.out.println(
-					"�Que desea hacer? \n 1) Agregar carros \n 2) Imprimir lista carros \n 3) Lanzar huevos \n 4) Salir");
+					"¿Que desea hacer? \n 1) Agregar carros \n 2) Imprimir lista carros \n 3) Lanzar huevos \n 4) Salir");
 			System.out.println("");
 			System.out.print("Ingrese Opcion: ");
 			opcion = scanner.nextInt();
@@ -47,15 +47,16 @@ public class Menu {
 				break;
 
 			case 3:
+				Tablero.muestraTablero();
 				Tablero.lanzarHuevo();
 				break;
-
+						
 			case 4:
 				salir = false;
 
 			default:
-				System.out.println("Has salido del juego");
-
+				System.out.println("Has salido del juego"); 
+											
 				salir = false;
 				break;
 			}

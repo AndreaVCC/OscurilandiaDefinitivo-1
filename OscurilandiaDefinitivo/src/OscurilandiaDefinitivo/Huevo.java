@@ -54,7 +54,7 @@ public class Huevo {
 
 	/**
 	 * Metodo que retorna la columna de caida del huevo.
-	 * @return. Retorna columnaCaida.
+	 * @return columnaCaida Retorna columnaCaida.
 	 */
 	public int getColumnaCaida() {
 		return columnaCaida;
@@ -78,7 +78,7 @@ public class Huevo {
 
 	/**
 	 * Metodo que define el puntaje del lanzamiento
-	 * @param define el puntaje del lanzamiento
+	 * @param puntaje define el puntaje del lanzamiento
 	 */
 	public void setPuntaje(int puntaje) {
 		this.puntaje = puntaje;

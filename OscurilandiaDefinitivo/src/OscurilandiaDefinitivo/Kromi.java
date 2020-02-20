@@ -75,7 +75,7 @@ public class Kromi extends Carro {
 	/**
 	 * Define Marca
 	 * 
-	 * @param Define Marca de Kromi
+	 * @param marca Define Marca de Kromi
 	 */
 	public void setMarca(String marca) {
 		this.marca = marca;

@@ -5,6 +5,13 @@
 
 package OscurilandiaDefinitivo;
 
+/**
+ * Clase hija de Carro, define las caracteristicas especificas de carro tipo
+ * Caguano.
+ * 
+ * @author DPJA
+ * @version 1.0
+ */
 public class Caguano extends Carro {
 
 	// ATributos

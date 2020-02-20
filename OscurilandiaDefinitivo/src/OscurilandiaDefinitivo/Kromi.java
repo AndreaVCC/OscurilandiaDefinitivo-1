@@ -7,7 +7,7 @@ package OscurilandiaDefinitivo;
 
 /**
  * Clase hija de Carro, define las caracteristicas especificas de carro tipo
- * Caguano.
+ * Kromi
  * 
  * @author DPJA
  * @version 1.0

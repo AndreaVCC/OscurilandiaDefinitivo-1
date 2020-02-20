@@ -73,7 +73,9 @@ public class Menu {
 		// Tablero tablero = new Tablero();
 		Tablero.creaTablero();
 
-		// Llamando a menu
+		/** Llamando a metodo menu
+		 * 
+		 */
 		menu();
 	}
 
